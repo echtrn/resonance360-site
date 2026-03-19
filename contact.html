@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Resonance 360</title>
+  <meta name="description" content="Request a second opinion or explore a clinical AI partnership with Resonance 360. Mount Elizabeth Novena, Singapore." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── Contact layout ──────────────────────────────────── */
+    .contact-main {
+      padding: var(--sp-16) 0 var(--sp-24);
+      background: var(--off-white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: var(--sp-12);
+      align-items: start;
+    }
+
+    /* ── Tab switcher ────────────────────────────────────── */
+    .form-tabs {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--grey-200);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      margin-bottom: var(--sp-8);
+      background: var(--white);
+    }
+    .form-tab {
+      flex: 1;
+      padding: var(--sp-4) var(--sp-5);
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: all var(--t-base);
+      text-align: center;
+      border-right: 1px solid var(--grey-200);
+      line-height: 1.4;
+    }
+    .form-tab:last-child { border-right: none; }
+    .form-tab:hover { color: var(--navy); background: var(--grey-100); }
+    .form-tab.is-active {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .form-tab .tab-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      letter-spacing: 0.06em;
+      opacity: 0.65;
+      margin-top: 2px;
+    }
+    .form-tab.is-active .tab-sub { opacity: 0.5; }
+
+    /* ── Form panels ─────────────────────────────────────── */
+    .form-panel {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--r-lg);
+      padding: var(--sp-10);
+    }
+    .form-panel.is-active { display: block; }
+
+    .form-panel__intro {
+      margin-bottom: var(--sp-8);
+      padding-bottom: var(--sp-8);
+      border-bottom: 1px solid var(--grey-100);
+    }
+    .form-panel__heading {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      margin-bottom: var(--sp-2);
+    }
+    .form-panel__sub {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    /* ── Form fields ─────────────────────────────────────── */
+    .form-group {
+      margin-bottom: var(--sp-5);
+    }
+    .form-group:last-of-type { margin-bottom: var(--sp-8); }
+
+    .form-group--row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-4);
+    }
+    .form-group--row .form-group { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: var(--sp-2);
+    }
+    label .req {
+      color: var(--teal);
+      margin-left: 2px;
+    }
+    label .opt {
+      color: var(--grey-400);
+      font-weight: 400;
+      font-size: 0.75rem;
+      margin-left: var(--sp-1);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 0.9375rem;
+      color: var(--text-dark);
+      background: var(--white);
+      border: 1.5px solid var(--grey-200);
+      border-radius: var(--r-sm);
+      padding: 0.75rem 1rem;
+      transition: border-color var(--t-fast), box-shadow var(--t-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+    }
+    input::placeholder,
+    textarea::placeholder { color: var(--grey-400); }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394A3B8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6;
+    }
+
+    /* Checkboxes */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-top: var(--sp-2);
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+      cursor: pointer;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid var(--grey-200);
+      border-radius: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+      accent-color: var(--teal);
+    }
+    .checkbox-item span {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+    }
+
+    /* Conditional field */
+    .form-group--conditional {
+      display: none;
+    }
+    .form-group--conditional.is-shown {
+      display: block;
+    }
+
+    /* Submit button */
+    .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+    .form-submit .btn {
+      min-width: 200px;
+      justify-content: center;
+    }
+    .form-submit__note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .form-submit__note a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Success / error states */
+    .form-message {
+      display: none;
+      padding: var(--sp-5) var(--sp-6);
+      border-radius: var(--r-md);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-top: var(--sp-6);
+    }
+    .form-message--success {
+      background: rgba(13, 148, 136, 0.08);
+      border: 1px solid rgba(13, 148, 136, 0.25);
+      color: var(--teal-hover);
+    }
+    .form-message--error {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: #b91c1c;
+    }
+    .form-message.is-shown { display: block; }
+
+    /* ── Sidebar info cards ───────────────────────────────── */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-5);
+      position: sticky;
+      top: calc(var(--nav-height) + var(--sp-8));
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6) var(--sp-7);
+    }
+    .info-card--navy {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .info-card__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: var(--sp-3);
+    }
+    .info-card--navy .info-card__label {
+      color: rgba(13, 148, 136, 0.8);
+    }
+
+    .info-card__heading {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: var(--sp-2);
+      line-height: 1.35;
+    }
+    .info-card--navy .info-card__heading { color: var(--white); }
+
+    .info-card__body {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+    .info-card--navy .info-card__body { color: rgba(255,255,255,0.45); }
+
+    .info-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--teal);
+      margin-top: var(--sp-4);
+      transition: gap var(--t-fast);
+    }
+    .info-card__link:hover { gap: var(--sp-3); }
+
+    .info-card__detail {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-3);
+      margin-top: var(--sp-4);
+      padding-top: var(--sp-4);
+      border-top: 1px solid var(--grey-100);
+    }
+    .info-card--navy .info-card__detail {
+      border-top-color: rgba(255,255,255,0.07);
+    }
+    .info-card__detail-icon {
+      color: var(--teal);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .info-card__detail-text {
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+    .info-card--navy .info-card__detail-text { color: rgba(255,255,255,0.4); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .info-card { flex: 1 1 240px; }
+    }
+
+    @media (max-width: 640px) {
+      .form-panel { padding: var(--sp-6); }
+      .form-group--row { grid-template-columns: 1fr; }
+      .form-submit { flex-direction: column; align-items: stretch; }
+      .form-submit .btn { min-width: unset; }
+      .contact-sidebar { flex-direction: column; }
+    }
+  </style>
+</head>
+<body class="page-contact">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__logo" aria-label="Resonance 360 home">
+        <span class="nav__logo-text">Resonance 360</span>
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+      </a>
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html"         class="nav__link">Home</a></li>
+        <li><a href="about.html"         class="nav__link">About</a></li>
+        <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
+        <li><a href="ai-innovation.html" class="nav__link">AI &amp; Innovation</a></li>
+        <li><a href="contact.html"       class="nav__link nav__link--cta active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="label">Contact</span>
+      <h1 class="page-hero__heading">Get In Touch</h1>
+      <p class="page-hero__sub">
+        Whether you are seeking a specialist read or exploring a clinical AI
+        partnership — reach out directly. All enquiries are read personally.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-main">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- ── Forms column ──────────────────────────────── -->
+          <div class="contact-forms">
+
+            <!-- Tab switcher -->
+            <div class="form-tabs" role="tablist">
+              <button
+                class="form-tab is-active"
+                id="tab-clinical"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-clinical"
+                data-target="clinical"
+              >
+                Clinical Enquiry
+                <span class="tab-sub">Second opinions &amp; referrals</span>
+              </button>
+              <button
+                class="form-tab"
+                id="tab-partner"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-partner"
+                data-target="partner"
+              >
+                Partnership Enquiry
+                <span class="tab-sub">AI &amp; innovation collaboration</span>
+              </button>
+            </div>
+
+            <!-- ── Clinical form ───────────────────────────── -->
+            <div class="form-panel is-active" id="panel-clinical" role="tabpanel" aria-labelledby="tab-clinical">
+              <div class="form-panel__intro">
+                <h2 class="form-panel__heading">Clinical Enquiry</h2>
+                <p class="form-panel__sub">
+                  For second opinion requests and intervention referrals.
+                  All cases are reviewed for suitability before acceptance.
+                  Please include as much clinical context as possible.
+                </p>
+              </div>
+
+              <!--
+                FORMSPREE SETUP:
+                1. Sign up at formspree.io
+                2. Create a new form → copy your form ID
+                3. Replace YOUR_CLINICAL_FORM_ID below with your actual ID
+                   e.g. https://formspree.io/f/xpzvwkdg
+              -->
+              <form
+                id="form-clinical"
+                action="https://formspree.io/f/mdawbawe"
+                method="POST"
+                novalidate
+              >
+                <!-- Hidden fields for Formspree -->
+                <input type="hidden" name="_subject" value="Clinical Enquiry — Resonance 360" />
+                <input type="hidden" name="_next" value="" />
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="c-name">Full name <span class="req">*</span></label>
+                    <input type="text" id="c-name" name="name" required placeholder="Dr Jane Smith" autocomplete="name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="c-email">Email address <span class="req">*</span></label>
+                    <input type="email" id="c-email" name="email" required placeholder="jane@clinic.com" autocomplete="email" />
+                  </div>
+                </div>
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="c-phone">Phone number <span class="opt">(optional)</span></label>
+                    <input type="tel" id="c-phone" name="phone" placeholder="+65 9123 4567" autocomplete="tel" />
+                  </div>
+                  <div class="form-group">
+                    <label for="c-type">You are enquiring as <span class="req">*</span></label>
+                    <select id="c-type" name="enquiry_type" required>
+                      <option value="" disabled selected>Select one</option>
+                      <option value="Referring Clinician">Referring Clinician</option>
+                      <option value="Patient">Patient</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group form-group--conditional" id="specialty-group">
+                  <label for="c-specialty">Your specialty <span class="opt">(optional)</span></label>
+                  <input type="text" id="c-specialty" name="specialty" placeholder="e.g. Orthopaedic Surgery, Sports Medicine" />
+                </div>
+
+                <div class="form-group">
+                  <label for="c-question">Clinical question or reason for enquiry <span class="req">*</span></label>
+                  <textarea
+                    id="c-question"
+                    name="clinical_question"
+                    required
+                    rows="5"
+                    placeholder="Please describe the case, the specific question you need answered, and any relevant clinical background."
+                  ></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="c-imaging">Imaging available <span class="opt">(optional)</span></label>
+                  <input type="text" id="c-imaging" name="imaging" placeholder="e.g. MRI lumbar spine (1.5T), CT left knee — on disc" />
+                </div>
+
+                <div class="form-submit">
+                  <button type="submit" class="btn btn--teal" id="submit-clinical">
+                    Submit Enquiry
+                  </button>
+                  <p class="form-submit__note">
+                    Or email directly:<br />
+                    <a href="mailto:echotrain@gmail.com?subject=Clinical Enquiry — Resonance 360">echotrain@gmail.com</a>
+                  </p>
+                </div>
+
+                <div class="form-message form-message--success" id="clinical-success">
+                  <strong>Enquiry received.</strong> Dr Tham will review your case and
+                  respond directly. If you don't hear back within 2 business days,
+                  please email <a href="mailto:echotrain@gmail.com">echotrain@gmail.com</a>.
+                </div>
+                <div class="form-message form-message--error" id="clinical-error">
+                  Something went wrong with the form. Please email directly:
+                  <a href="mailto:echotrain@gmail.com?subject=Clinical Enquiry — Resonance 360">echotrain@gmail.com</a>
+                </div>
+              </form>
+            </div>
+
+            <!-- ── Partnership form ────────────────────────── -->
+            <div class="form-panel" id="panel-partner" role="tabpanel" aria-labelledby="tab-partner">
+              <div class="form-panel__intro">
+                <h2 class="form-panel__heading">Partnership Enquiry</h2>
+                <p class="form-panel__sub">
+                  For AI companies, healthcare systems, and vendors seeking a
+                  clinical partner. Describe what you are working on and what
+                  kind of engagement you have in mind.
+                </p>
+              </div>
+
+              <!--
+                FORMSPREE SETUP:
+                Replace YOUR_PARTNER_FORM_ID with your Formspree form ID.
+                You can use the same ID as the clinical form, or create a
+                separate form for cleaner inbox management.
+              -->
+              <form
+                id="form-partner"
+                action="https://formspree.io/f/xqeyneyb"
+                method="POST"
+                novalidate
+              >
+                <input type="hidden" name="_subject" value="Partnership Enquiry — Resonance 360" />
+                <input type="hidden" name="_next" value="" />
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="p-name">Full name <span class="req">*</span></label>
+                    <input type="text" id="p-name" name="name" required placeholder="Alex Chen" autocomplete="name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="p-email">Email address <span class="req">*</span></label>
+                    <input type="email" id="p-email" name="email" required placeholder="alex@company.com" autocomplete="email" />
+                  </div>
+                </div>
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="p-org">Organisation <span class="req">*</span></label>
+                    <input type="text" id="p-org" name="organisation" required placeholder="Company or institution name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="p-role">Your role <span class="opt">(optional)</span></label>
+                    <input type="text" id="p-role" name="role" placeholder="e.g. Product Lead, Chief Medical Officer" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Area of interest <span class="opt">(select all that apply)</span></label>
+                  <div class="checkbox-group">
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="interest[]" value="AI Advisory" />
+                      <span>AI Advisory — clinical evaluation and product input</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="interest[]" value="Workflow Redesign" />
+                      <span>Workflow Redesign — AI integration and deployment strategy</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="interest[]" value="Report Generation & Optimisation" />
+                      <span>Report Generation &amp; Optimisation — structured reporting pipelines</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="interest[]" value="Speaking / Panel" />
+                      <span>Speaking or panel participation</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="interest[]" value="Other" />
+                      <span>Other — I'll describe below</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="p-description">What are you working on? <span class="req">*</span></label>
+                  <textarea
+                    id="p-description"
+                    name="description"
+                    required
+                    rows="5"
+                    placeholder="Describe your project, product, or organisation — and what kind of engagement or input you are looking for."
+                  ></textarea>
+                </div>
+
+                <div class="form-submit">
+                  <button type="submit" class="btn btn--teal" id="submit-partner">
+                    Submit Enquiry
+                  </button>
+                  <p class="form-submit__note">
+                    Or email directly:<br />
+                    <a href="mailto:echotrain@gmail.com?subject=Partnership Enquiry — Resonance 360">echotrain@gmail.com</a>
+                  </p>
+                </div>
+
+                <div class="form-message form-message--success" id="partner-success">
+                  <strong>Enquiry received.</strong> Dr Tham will review your message
+                  and respond directly. For urgent matters, email
+                  <a href="mailto:echotrain@gmail.com">echotrain@gmail.com</a>.
+                </div>
+                <div class="form-message form-message--error" id="partner-error">
+                  Something went wrong with the form. Please email directly:
+                  <a href="mailto:echotrain@gmail.com?subject=Partnership Enquiry — Resonance 360">echotrain@gmail.com</a>
+                </div>
+              </form>
+            </div>
+
+          </div><!-- /contact-forms -->
+
+          <!-- ── Sidebar ────────────────────────────────────── -->
+          <aside class="contact-sidebar reveal reveal-delay-2">
+
+            <!-- Location -->
+            <div class="info-card">
+              <p class="info-card__label">Location</p>
+              <h3 class="info-card__heading">Radiologic Clinic<br />Mount Elizabeth Novena Hospital</h3>
+              <p class="info-card__body">
+                38 Irrawaddy Road<br />
+                Singapore 329563
+              </p>
+              <a href="https://maps.google.com/?q=Mount+Elizabeth+Novena+Hospital+Singapore" target="_blank" rel="noopener noreferrer" class="info-card__link">
+                Get directions
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <div class="info-card__detail">
+                <span class="info-card__detail-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4"/>
+                    <path d="M7 4v3.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <p class="info-card__detail-text">
+                  Please enquire before visiting — all cases are reviewed for suitability prior to appointment confirmation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Direct email -->
+            <div class="info-card info-card--navy">
+              <p class="info-card__label">Direct contact</p>
+              <h3 class="info-card__heading">Prefer to email?</h3>
+              <p class="info-card__body">
+                All enquiries go directly to Dr Tham.
+                No assistant, no queue.
+              </p>
+              <a href="mailto:echotrain@gmail.com" class="info-card__link">
+                echotrain@gmail.com
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Response note -->
+            <div class="info-card">
+              <p class="info-card__label">What to expect</p>
+              <h3 class="info-card__heading">Every enquiry is read personally.</h3>
+              <p class="info-card__body">
+                Clinical cases are reviewed before acceptance. You will hear back
+                directly — either to confirm suitability or to ask for more information.
+              </p>
+            </div>
+
+          </aside>
+
+        </div><!-- /contact-grid -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">Resonance 360</span>
+        <p class="footer__location">Mount Elizabeth Novena · Singapore</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="clinical.html">Clinical Services</a>
+        <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <p class="footer__contact-label">Enquiries</p>
+        <a href="mailto:echotrain@gmail.com" class="footer__contact-email">echotrain@gmail.com</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="year"></span> Resonance 360. All rights reserved.</p>
+        <p class="footer__tagline">Precision Radiology. Intelligent Innovation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ── Contact page JS ────────────────────────────────── */
+    (function () {
+
+      // Tab switching
+      const tabs   = document.querySelectorAll('.form-tab');
+      const panels = document.querySelectorAll('.form-panel');
+
+      function activateTab(target) {
+        tabs.forEach(t => {
+          const isTarget = t.dataset.target === target;
+          t.classList.toggle('is-active', isTarget);
+          t.setAttribute('aria-selected', isTarget);
+        });
+        panels.forEach(p => {
+          p.classList.toggle('is-active', p.id === 'panel-' + target);
+        });
+      }
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => activateTab(tab.dataset.target));
+      });
+
+      // Pre-select tab from URL param (?type=clinical or ?type=partner)
+      const contactType = (window.R360 && window.R360.contactType) || null;
+      if (contactType === 'partner') activateTab('partner');
+      else activateTab('clinical'); // default
+
+      // Specialty field: show only when "Referring Clinician" selected
+      const typeSelect    = document.getElementById('c-type');
+      const specialtyGroup = document.getElementById('specialty-group');
+
+      if (typeSelect) {
+        typeSelect.addEventListener('change', function () {
+          const show = this.value === 'Referring Clinician';
+          specialtyGroup.classList.toggle('is-shown', show);
+        });
+      }
+
+      // Formspree AJAX submission
+      function handleFormSubmit(formId, successId, errorId) {
+        const form    = document.getElementById(formId);
+        const success = document.getElementById(successId);
+        const error   = document.getElementById(errorId);
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          // Basic required field validation
+          const required = form.querySelectorAll('[required]');
+          let valid = true;
+          required.forEach(field => {
+            if (!field.value.trim()) {
+              field.style.borderColor = '#ef4444';
+              valid = false;
+            } else {
+              field.style.borderColor = '';
+            }
+          });
+          if (!valid) return;
+
+          const submitBtn = form.querySelector('[type="submit"]');
+          const originalText = submitBtn.textContent;
+          submitBtn.textContent = 'Sending…';
+          submitBtn.disabled = true;
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              form.reset();
+              success.classList.add('is-shown');
+              error.classList.remove('is-shown');
+              submitBtn.textContent = 'Sent ✓';
+            } else {
+              throw new Error('Server error');
+            }
+          } catch (err) {
+            error.classList.add('is-shown');
+            success.classList.remove('is-shown');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }
+        });
+      }
+
+      handleFormSubmit('form-clinical', 'clinical-success', 'clinical-error');
+      handleFormSubmit('form-partner',  'partner-success',  'partner-error');
+
+    })();
+  </script>
+</body>
+</html>

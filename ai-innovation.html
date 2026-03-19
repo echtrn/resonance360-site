@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI &amp; Innovation — Resonance 360</title>
+  <meta name="description" content="Clinical AI advisory, workflow redesign, and structured reporting optimisation. Resonance 360 bridges deep radiology expertise with the healthcare AI ecosystem." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+
+    /* ── AI page hero override — mono heading ────────────── */
+    .page-hero--ai .page-hero__heading {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Positioning strip ───────────────────────────────── */
+    .ai-positioning {
+      padding: var(--sp-16) 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .ai-positioning__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: center;
+    }
+    .ai-positioning__heading {
+      font-size: clamp(1.4rem, 2.5vw, 1.875rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin-bottom: var(--sp-4);
+    }
+    .ai-positioning__body {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+    }
+    .ai-positioning__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+    }
+    .ai-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: var(--sp-2) var(--sp-3);
+      border: 1px solid rgba(13, 148, 136, 0.3);
+      border-radius: var(--r-sm);
+      color: var(--teal);
+      background: var(--teal-dim);
+    }
+
+    /* ── Services (dark background) ─────────────────────── */
+    .ai-services {
+      background: var(--navy);
+      padding: var(--sp-24) 0;
+    }
+    .ai-services__intro {
+      margin-bottom: var(--sp-16);
+    }
+    .ai-services__heading {
+      font-family: var(--font-mono);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .ai-service-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .ai-service-item {
+      background: var(--navy-mid);
+      padding: var(--sp-10) var(--sp-10);
+      display: grid;
+      grid-template-columns: 64px 1fr 1fr;
+      gap: var(--sp-8);
+      align-items: start;
+      transition: background var(--t-base);
+    }
+    .ai-service-item:hover {
+      background: var(--navy-light);
+    }
+
+    .ai-service-item__num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--teal);
+      padding-top: 4px;
+    }
+
+    .ai-service-item__left {}
+    .ai-service-item__heading {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: var(--sp-4);
+      line-height: 1.3;
+    }
+    .ai-service-item__desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .ai-service-item__right {}
+    .ai-service-item__detail-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-bottom: var(--sp-4);
+    }
+    .ai-service-item__points {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+    }
+    .ai-service-item__point {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-3);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.5);
+    }
+    .ai-service-item__point::before {
+      content: '—';
+      color: var(--teal);
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    /* ── Thought leadership ───────────────────────────────── */
+    .thought-leadership {
+      padding: var(--sp-24) 0;
+      background: var(--off-white);
+    }
+    .thought-leadership__intro {
+      margin-bottom: var(--sp-14);
+    }
+    .thought-leadership__heading {
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: var(--sp-2);
+    }
+    .thought-leadership__sub {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-5);
+    }
+
+    /* Regular post card */
+    .post-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-radius: var(--r-lg);
+      padding: var(--sp-8);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--t-slow), box-shadow var(--t-slow);
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.07);
+    }
+    .post-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--sp-5);
+    }
+    .post-card__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-dim);
+      border: 1px solid rgba(13,148,136,0.2);
+      padding: var(--sp-1) var(--sp-3);
+      border-radius: 100px;
+    }
+    .post-card__date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--grey-400);
+      letter-spacing: 0.04em;
+    }
+    .post-card__heading {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      line-height: 1.4;
+      margin-bottom: var(--sp-3);
+    }
+    .post-card__excerpt {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: var(--sp-6);
+    }
+    .post-card__quote {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      border-left: 2px solid var(--teal);
+      padding-left: var(--sp-4);
+      margin: var(--sp-4) 0 var(--sp-6);
+      font-style: italic;
+    }
+    .post-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      text-transform: uppercase;
+      transition: gap var(--t-fast), color var(--t-fast);
+      margin-top: auto;
+    }
+    .post-card__link:hover {
+      gap: var(--sp-3);
+      color: var(--teal-hover);
+    }
+
+    /* LinkedIn follow card — spans full second row or fills slot */
+    .post-card--follow {
+      background: var(--navy);
+      border-color: var(--navy);
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .post-card--follow .post-card__tag {
+      background: rgba(13,148,136,0.15);
+      color: var(--teal);
+      border-color: rgba(13,148,136,0.25);
+    }
+    .post-card--follow .post-card__heading {
+      color: var(--white);
+    }
+    .post-card--follow .post-card__excerpt {
+      color: rgba(255,255,255,0.45);
+    }
+    .post-card--follow .post-card__link {
+      color: var(--teal);
+    }
+
+    /* ── Partner CTA ─────────────────────────────────────── */
+    .partner-cta {
+      background: var(--navy-mid);
+      padding: var(--sp-20) 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .partner-cta .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-10);
+    }
+    .partner-cta__heading {
+      font-family: var(--font-mono);
+      font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+      font-weight: 500;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-bottom: var(--sp-3);
+    }
+    .partner-cta__sub {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      max-width: 480px;
+    }
+    .partner-cta__actions {
+      display: flex;
+      gap: var(--sp-4);
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .ai-positioning__grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+
+      .ai-service-item {
+        grid-template-columns: 48px 1fr;
+        gap: var(--sp-5);
+      }
+      .ai-service-item__right {
+        grid-column: 2;
+        margin-top: var(--sp-4);
+        padding-top: var(--sp-4);
+        border-top: 1px solid rgba(255,255,255,0.07);
+      }
+
+      .posts-grid { grid-template-columns: 1fr; }
+
+      .partner-cta .container { flex-direction: column; align-items: flex-start; }
+      .partner-cta__sub { max-width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      .ai-service-item {
+        grid-template-columns: 1fr;
+        padding: var(--sp-8) var(--sp-6);
+      }
+      .ai-service-item__num { margin-bottom: calc(-1 * var(--sp-2)); }
+      .ai-service-item__right { grid-column: 1; }
+
+      .partner-cta__actions { flex-direction: column; width: 100%; }
+      .partner-cta__actions .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body class="page-ai">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__logo" aria-label="Resonance 360 home">
+        <span class="nav__logo-text">Resonance 360</span>
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+      </a>
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html"         class="nav__link">Home</a></li>
+        <li><a href="about.html"         class="nav__link">About</a></li>
+        <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
+        <li><a href="ai-innovation.html" class="nav__link active">AI &amp; Innovation</a></li>
+        <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────────────── -->
+  <header class="page-hero page-hero--ai">
+    <div class="container">
+      <span class="label">AI &amp; Innovation</span>
+      <h1 class="page-hero__heading">Clinical AI Partnership.</h1>
+      <p class="page-hero__sub">
+        Bridging deep radiology expertise with the healthcare AI ecosystem.
+        For AI companies and healthcare systems that need a credible clinical
+        partner — someone who understands both sides of the room.
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Positioning strip ──────────────────────────────── -->
+    <section class="ai-positioning">
+      <div class="container">
+        <div class="ai-positioning__grid">
+          <div class="reveal">
+            <h2 class="ai-positioning__heading">
+              Technology without clinical grounding
+              is still just a prototype.
+            </h2>
+            <p class="ai-positioning__body">
+              Most AI tools in healthcare are built by people who understand
+              machine learning. Fewer are shaped by people who understand
+              what a radiologist actually does — how they read, how they decide,
+              where the friction lives, and what the technology has to survive
+              to be useful. That clinical grounding is what Resonance 360 brings
+              to AI partnerships.
+            </p>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <p class="ai-positioning__body" style="margin-bottom: var(--sp-6);">
+              Areas of engagement:
+            </p>
+            <div class="ai-positioning__tags">
+              <span class="ai-tag">AI Advisory</span>
+              <span class="ai-tag">Workflow Redesign</span>
+              <span class="ai-tag">Structured Reporting</span>
+              <span class="ai-tag">Clinical Validation</span>
+              <span class="ai-tag">Governance Frameworks</span>
+              <span class="ai-tag">AI Literacy &amp; Training</span>
+              <span class="ai-tag">Report Optimisation</span>
+              <span class="ai-tag">Deployment Strategy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services ───────────────────────────────────────── -->
+    <section class="ai-services" aria-label="AI and Innovation services">
+      <div class="container">
+
+        <div class="ai-services__intro reveal">
+          <span class="label">What We Offer</span>
+          <h2 class="ai-services__heading">Three areas of engagement.</h2>
+        </div>
+
+        <div class="ai-service-list">
+
+          <!-- 01 AI Advisory -->
+          <div class="ai-service-item reveal">
+            <p class="ai-service-item__num">01</p>
+            <div class="ai-service-item__left">
+              <h3 class="ai-service-item__heading">AI Advisory</h3>
+              <p class="ai-service-item__desc">
+                For AI companies and vendors seeking a credible clinical partner
+                to shape, validate, or advocate for their product within healthcare
+                systems. Resonance 360 provides frank, subspecialty-grounded clinical
+                input — not endorsement, but genuine engagement with what the technology
+                does, where it works, and where it falls short in real clinical conditions.
+              </p>
+            </div>
+            <div class="ai-service-item__right">
+              <p class="ai-service-item__detail-label">This includes</p>
+              <div class="ai-service-item__points">
+                <p class="ai-service-item__point">Clinical evaluation of AI tools against real-world radiology practice</p>
+                <p class="ai-service-item__point">Advisory on product-market fit within clinical workflows</p>
+                <p class="ai-service-item__point">Regulatory and governance positioning</p>
+                <p class="ai-service-item__point">Speaking engagements and panel participation</p>
+                <p class="ai-service-item__point">Clinician-facing communication strategy</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Workflow Redesign -->
+          <div class="ai-service-item reveal">
+            <p class="ai-service-item__num">02</p>
+            <div class="ai-service-item__left">
+              <h3 class="ai-service-item__heading">Workflow Redesign</h3>
+              <p class="ai-service-item__desc">
+                Most AI implementations fail not because the technology is wrong,
+                but because the workflow around it hasn't changed. Resonance 360
+                offers clinical workflow analysis for radiology departments and healthcare
+                systems seeking to integrate AI and automation — identifying where AI
+                meaningfully reduces friction, where it introduces new risks, and how
+                to build governance and training structures for sustainable adoption.
+              </p>
+            </div>
+            <div class="ai-service-item__right">
+              <p class="ai-service-item__detail-label">This includes</p>
+              <div class="ai-service-item__points">
+                <p class="ai-service-item__point">End-to-end radiology workflow analysis</p>
+                <p class="ai-service-item__point">AI integration and deployment strategy</p>
+                <p class="ai-service-item__point">Accountability and ownership framework design</p>
+                <p class="ai-service-item__point">Clinician training and change management</p>
+                <p class="ai-service-item__point">Post-deployment monitoring and performance review</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Report Generation & Optimisation -->
+          <div class="ai-service-item reveal">
+            <p class="ai-service-item__num">03</p>
+            <div class="ai-service-item__left">
+              <h3 class="ai-service-item__heading">Medical Report Generation<br />&amp; Optimisation</h3>
+              <p class="ai-service-item__desc">
+                Radiology reporting is one of the highest-leverage applications of
+                AI in healthcare — and one of the most poorly executed. Resonance 360
+                advises on structured reporting pipeline design, AI-assisted report
+                generation, and the development of patient-friendly report outputs.
+                Grounded in real reporting practice, this work is about quality,
+                clarity, and accountability — not just speed.
+              </p>
+            </div>
+            <div class="ai-service-item__right">
+              <p class="ai-service-item__detail-label">This includes</p>
+              <div class="ai-service-item__points">
+                <p class="ai-service-item__point">Structured report template design for MSK and beyond</p>
+                <p class="ai-service-item__point">AI-assisted dictation and report generation pipeline review</p>
+                <p class="ai-service-item__point">Patient-friendly report simplification</p>
+                <p class="ai-service-item__point">Quality assurance and output review frameworks</p>
+                <p class="ai-service-item__point">Integration with RIS and clinical documentation systems</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Thought Leadership ──────────────────────────────── -->
+    <section class="thought-leadership" aria-label="Thought leadership">
+      <div class="container">
+
+        <div class="thought-leadership__intro reveal">
+          <span class="label">Thinking Out Loud</span>
+          <h2 class="thought-leadership__heading">Published thinking on radiology,<br />AI, and the space between.</h2>
+          <p class="thought-leadership__sub">
+            Dr Tham writes regularly on LinkedIn about healthcare AI, governance,
+            and the evolving role of the radiologist. A selection of recent pieces below.
+          </p>
+        </div>
+
+        <div class="posts-grid">
+
+          <!-- Post 1 — AI in Healthcare Guidelines 2.0 -->
+          <article class="post-card reveal reveal-delay-1">
+            <div class="post-card__meta">
+              <span class="post-card__tag">Governance</span>
+              <span class="post-card__date">Dec 2024</span>
+            </div>
+            <h3 class="post-card__heading">Singapore's AI in Healthcare Guidelines 2.0 — who owns what?</h3>
+            <p class="post-card__excerpt">
+              Singapore's updated framework defines three distinct stakeholder groups
+              across the AI lifecycle: Developers, Deployers, and Users. Each carries
+              specific obligations — from transparency and testing, to governance and
+              risk assessment, to professional judgment and human oversight.
+            </p>
+            <blockquote class="post-card__quote">
+              "Most deployment friction comes from exactly this: unclear ownership."
+            </blockquote>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="post-card__link">
+              Read on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Post 2 — Budget 2026 / National AI Council -->
+          <article class="post-card reveal reveal-delay-2">
+            <div class="post-card__meta">
+              <span class="post-card__tag">Policy</span>
+              <span class="post-card__date">Feb 2025</span>
+            </div>
+            <h3 class="post-card__heading">Singapore's National AI Council — balancing governance with startup agility</h3>
+            <p class="post-card__excerpt">
+              Budget 2026 signalled Singapore's intent to formalise AI governance
+              at a national level. The question for healthcare AI is whether
+              regulation will move fast enough to enable innovation, or slow enough
+              to protect it. A look at what inclusive governance actually requires
+              from the ground up — including the role of RADII.
+            </p>
+            <a href="https://www.linkedin.com/posts/sengchoetham_budget-2026-singapore-to-set-up-national-activity-7431328538303311873-DR-t" target="_blank" rel="noopener noreferrer" class="post-card__link">
+              Read on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Post 3 — Private Practice / Power of Scale -->
+          <article class="post-card reveal reveal-delay-3">
+            <div class="post-card__meta">
+              <span class="post-card__tag">Radiology Practice</span>
+              <span class="post-card__date">Nov 2024</span>
+            </div>
+            <h3 class="post-card__heading">Radiology private practice — the power of scale, and what it demands</h3>
+            <p class="post-card__excerpt">
+              After 16 years in private radiology, three models emerge: restructured
+              hospitals, small independent centres, and large private groups. Scale
+              enables governance, technology investment, and systems thinking.
+              But it also raises the stakes for the people inside it.
+            </p>
+            <blockquote class="post-card__quote">
+              "The more we automate, the more crucial the driver in the seat becomes."
+            </blockquote>
+            <a href="https://www.linkedin.com/posts/sengchoetham_radiology-privatepractice-healthsystems-activity-7425781160007512064-PYXJ" target="_blank" rel="noopener noreferrer" class="post-card__link">
+              Read on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Follow card -->
+          <article class="post-card post-card--follow reveal reveal-delay-3">
+            <div class="post-card__meta">
+              <span class="post-card__tag">LinkedIn</span>
+            </div>
+            <h3 class="post-card__heading">More published thinking</h3>
+            <p class="post-card__excerpt">
+              Dr Tham writes regularly on AI in healthcare, radiology governance,
+              and the evolving role of the subspecialist. Follow on LinkedIn
+              for the latest pieces.
+            </p>
+            <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="post-card__link">
+              Follow on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Partner CTA ─────────────────────────────────────── -->
+    <section class="partner-cta" aria-label="Partner with us">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="partner-cta__heading">Working on something in healthcare AI?</h2>
+          <p class="partner-cta__sub">
+            If you are building for radiology or healthcare and need a clinical
+            partner who has been in the room — get in touch. Engagements are
+            considered individually.
+          </p>
+        </div>
+        <div class="partner-cta__actions reveal reveal-delay-2">
+          <a href="contact.html?type=partner" class="btn btn--teal">Partner With Us</a>
+          <a href="mailto:echotrain@gmail.com" class="btn btn--outline-white">Email Directly</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">Resonance 360</span>
+        <p class="footer__location">Mount Elizabeth Novena · Singapore</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="clinical.html">Clinical Services</a>
+        <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <p class="footer__contact-label">Enquiries</p>
+        <a href="mailto:echotrain@gmail.com" class="footer__contact-email">echotrain@gmail.com</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="year"></span> Resonance 360. All rights reserved.</p>
+        <p class="footer__tagline">Precision Radiology. Intelligent Innovation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
