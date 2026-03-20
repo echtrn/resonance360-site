@@ -714,7 +714,7 @@ ul  { list-style: none; }
     pointer-events: auto;
   }
   .nav__link {
-    padding: var(--sp-5) var(--sp-4);
+    padding: var(--sp-6) var(--sp-4);
     border-bottom: 1px solid rgba(255,255,255,0.06);
     font-size: 1rem;
   }
