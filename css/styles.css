@@ -809,172 +809,120 @@ ul  { list-style: none; }
     --container-pad: 1.25rem;
   }
 
-  /* Nav mobile — slide-in panel */
-  .nav__hamburger { display: flex; }
+  /* Nav mobile — minimal blur overlay */
+  .nav__hamburger { display: flex; z-index: 302; }
 
-  /* Dimmed backdrop */
+  /* Frosted backdrop */
   .nav__overlay {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--navy);
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--t-base);
-    z-index: 199;
+    transition: opacity 0.4s ease;
+    z-index: 300;
   }
   .nav__overlay.is-open {
     opacity: 1;
     pointer-events: auto;
   }
 
+  /* Links container — centered on screen, solid bg */
   .nav__links {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: auto;
-    width: 80%;
-    max-width: 320px;
-    background: var(--navy);
+    inset: 0;
     flex-direction: column;
-    align-items: stretch;
-    padding: var(--sp-6) var(--sp-8);
-    transform: translateX(100%);
-    opacity: 1;
-    pointer-events: none;
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    align-items: center;
+    justify-content: center;
     gap: 0;
-    box-shadow: -16px 0 48px rgba(0, 0, 0, 0.3);
-    z-index: 200;
-    overflow-y: auto;
-    justify-content: flex-start;
+    padding: 0;
+    background: var(--navy);
+    z-index: 301;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
   }
   .nav__links.is-open {
-    transform: translateX(0);
+    opacity: 1;
     pointer-events: auto;
   }
 
-  /* Panel header — logo */
-  .nav__panel-header {
-    display: flex;
-    align-items: center;
-    gap: var(--sp-2);
-    padding: var(--sp-4) var(--sp-2) var(--sp-10);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: var(--sp-4);
-  }
-  .nav__panel-logo {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: -0.015em;
-  }
+  /* Hide panel header/footer injected by JS */
+  .nav__panel-header,
+  .nav__panel-footer { display: none; }
 
-  /* Panel footer — email + tagline */
-  .nav__panel-footer {
-    margin-top: auto;
-    padding: var(--sp-8) var(--sp-2) var(--sp-4);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .nav__panel-email {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--teal);
-    margin-bottom: var(--sp-3);
-    transition: color var(--t-fast);
-  }
-  .nav__panel-email:hover { color: var(--teal-hover); }
-  .nav__panel-tagline {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.06em;
-    color: rgba(255, 255, 255, 0.15);
-    line-height: 1.6;
-  }
-
-  /* Full-width separators on <li> elements */
-  .nav__links > li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 0 calc(-1 * var(--sp-8));
-    padding: 0 var(--sp-8);
-  }
-  .nav__links > li:last-child { border-bottom: none; }
-
-  /* Links — staggered entrance */
+  /* Links — centered, staggered fade-up */
   .nav__link {
-    padding: var(--sp-8) var(--sp-2);
+    display: block;
+    padding: var(--sp-5) var(--sp-4);
     border-bottom: none;
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    color: rgba(255, 255, 255, 0.45);
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
     position: relative;
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateY(12px);
     transition: color var(--t-fast),
-                opacity 0.3s ease,
-                transform 0.3s ease;
+                opacity 0.4s ease,
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .nav__links.is-open .nav__link {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-  .nav__links.is-open li:nth-child(2) .nav__link { transition-delay: 0.05s; }
-  .nav__links.is-open li:nth-child(3) .nav__link { transition-delay: 0.1s; }
-  .nav__links.is-open li:nth-child(4) .nav__link { transition-delay: 0.15s; }
-  .nav__links.is-open li:nth-child(5) .nav__link { transition-delay: 0.2s; }
-  .nav__links.is-open li:nth-child(6) .nav__link { transition-delay: 0.25s; }
+  .nav__links.is-open li:nth-child(1) .nav__link { transition-delay: 0.06s; }
+  .nav__links.is-open li:nth-child(2) .nav__link { transition-delay: 0.12s; }
+  .nav__links.is-open li:nth-child(3) .nav__link { transition-delay: 0.18s; }
+  .nav__links.is-open li:nth-child(4) .nav__link { transition-delay: 0.24s; }
+  .nav__links.is-open li:nth-child(5) .nav__link { transition-delay: 0.30s; }
 
-  /* Active link — teal bar + white text + bolder weight */
+  /* Active link — white + teal dot */
   .nav__link.active {
     color: var(--white) !important;
-    font-weight: 600;
+    font-weight: 500;
   }
   .nav__link.active::after {
-    display: block !important;
+    display: inline-block !important;
     content: '' !important;
-    position: absolute !important;
-    left: calc(-1 * var(--sp-2));
-    top: 50%;
-    transform: translateY(-50%) !important;
+    position: relative !important;
+    left: var(--sp-3) !important;
+    top: auto !important;
     bottom: auto !important;
     right: auto !important;
-    width: 3px !important;
-    height: 20px !important;
+    transform: none !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
     background: var(--teal) !important;
-    border-radius: 2px !important;
+    vertical-align: middle;
   }
 
   /* AI page — monospace nav links */
   .page-ai .nav__link {
     font-family: var(--font-mono);
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: -0.01em;
   }
   .page-ai .nav__link.active {
-    font-weight: 500;
+    font-weight: 400;
   }
 
-  /* Contact CTA — teal with arrow accent */
+  /* Contact CTA — teal, no box */
   .nav__link--cta {
     margin-left: 0;
-    margin-top: var(--sp-2);
-    padding: var(--sp-8) var(--sp-2);
-    font-size: 1.25rem;
-    font-weight: 500;
+    margin-top: var(--sp-3);
+    padding: var(--sp-5) var(--sp-4);
+    font-size: 1.5rem;
+    font-weight: 400;
     border: none;
     background: none;
     color: var(--teal) !important;
-    text-align: left;
+    text-align: center;
     border-radius: 0;
-    justify-content: flex-start;
-  }
-  .nav__link--cta::before {
-    content: '→';
-    font-family: var(--font-mono);
-    margin-right: var(--sp-2);
-    font-size: 0.9em;
+    justify-content: center;
   }
   .nav__link--cta.active::after { display: none !important; }
 
