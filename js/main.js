@@ -79,26 +79,7 @@
     if (window.innerWidth > 768) closeNav();
   });
 
-  // ── Nav: active link by current page ─────────────────────
-  (function setActiveLink() {
-    const path     = window.location.pathname;
-    const page     = path.split('/').pop() || 'index.html';
-    const allLinks = document.querySelectorAll('.nav__link');
-
-    allLinks.forEach(function (link) {
-      const href = link.getAttribute('href');
-      // Strip query strings from href for comparison
-      const hrefBase = href ? href.split('?')[0] : '';
-      const isHome   = (page === '' || page === 'index.html') && hrefBase === 'index.html';
-      const isMatch  = hrefBase === page;
-
-      if (isHome || isMatch) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  })();
+  // Active link is set via hardcoded `active` class in each page's HTML.
 
   // ── Scroll reveal ─────────────────────────────────────────
   (function initReveal() {
