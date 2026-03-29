@@ -893,14 +893,23 @@ ul  { list-style: none; }
     line-height: 1.6;
   }
 
+  /* Full-width separators on <li> elements */
+  .nav__links > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0 calc(-1 * var(--sp-8));
+    padding: 0 var(--sp-8);
+  }
+  .nav__links > li:last-child { border-bottom: none; }
+
   /* Links — staggered entrance */
   .nav__link {
     padding: var(--sp-8) var(--sp-2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: none;
     font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: -0.01em;
     color: rgba(255, 255, 255, 0.45);
+    position: relative;
     opacity: 0;
     transform: translateX(20px);
     transition: color var(--t-fast),
@@ -919,21 +928,32 @@ ul  { list-style: none; }
 
   /* Active link — teal bar + white text + bolder weight */
   .nav__link.active {
-    color: var(--white);
+    color: var(--white) !important;
     font-weight: 600;
-    position: relative;
   }
   .nav__link.active::after {
-    display: block;
-    content: '';
-    position: absolute;
+    display: block !important;
+    content: '' !important;
+    position: absolute !important;
     left: calc(-1 * var(--sp-2));
     top: 50%;
-    transform: translateY(-50%);
-    width: 3px;
-    height: 20px;
-    background: var(--teal);
-    border-radius: 2px;
+    transform: translateY(-50%) !important;
+    bottom: auto !important;
+    right: auto !important;
+    width: 3px !important;
+    height: 20px !important;
+    background: var(--teal) !important;
+    border-radius: 2px !important;
+  }
+
+  /* AI page — monospace nav links */
+  .page-ai .nav__link {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .page-ai .nav__link.active {
+    font-weight: 500;
   }
 
   /* Contact CTA — teal with arrow accent */
@@ -949,7 +969,6 @@ ul  { list-style: none; }
     text-align: left;
     border-radius: 0;
     justify-content: flex-start;
-    border-bottom: none;
   }
   .nav__link--cta::before {
     content: '→';
@@ -957,7 +976,7 @@ ul  { list-style: none; }
     margin-right: var(--sp-2);
     font-size: 0.9em;
   }
-  .nav__link--cta.active::after { display: none; }
+  .nav__link--cta.active::after { display: none !important; }
 
   /* Hero */
   .hero__ctas { flex-direction: column; }
