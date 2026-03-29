@@ -640,6 +640,123 @@ ul  { list-style: none; }
   letter-spacing: 0.06em;
 }
 
+/* ── Project Cards (shared across clinical & AI pages) ───── */
+.projects {
+  padding: var(--sp-20) 0;
+  background: var(--off-white);
+}
+.projects__intro {
+  margin-bottom: var(--sp-12);
+}
+.projects__heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: var(--sp-2);
+}
+.projects__sub {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+}
+.projects__grid--single {
+  grid-template-columns: 1fr;
+  max-width: 600px;
+}
+.projects__toggle {
+  display: block;
+  margin: var(--sp-10) auto 0;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--grey-200);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--t-slow), box-shadow var(--t-slow);
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.07);
+}
+.project-card--hidden {
+  display: none;
+}
+
+.project-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.project-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: var(--teal-dim);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: 100px;
+}
+.project-card__year {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--grey-400);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.project-card__heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+  margin-bottom: var(--sp-3);
+}
+.project-card__summary {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  flex: 1;
+  margin-bottom: var(--sp-4);
+}
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+  text-transform: uppercase;
+  transition: gap var(--t-fast), color var(--t-fast);
+  margin-top: auto;
+}
+.project-card__link:hover {
+  gap: var(--sp-3);
+  color: var(--teal-hover);
+}
+
+@media (max-width: 768px) {
+  .projects__grid { grid-template-columns: 1fr; }
+}
+
 /* ── Scroll Reveal ───────────────────────────────────────── */
 .reveal {
   opacity: 0;
