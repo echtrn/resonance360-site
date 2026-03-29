@@ -809,24 +809,12 @@ ul  { list-style: none; }
     --container-pad: 1.25rem;
   }
 
-  /* Nav mobile — minimal blur overlay */
-  .nav__hamburger { display: flex; z-index: 302; }
+  /* Nav mobile — minimal full-screen overlay */
+  .nav.is-menu-open { z-index: 9999; }
+  .nav__hamburger { display: flex; }
 
-  /* Frosted backdrop */
-  .nav__overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: var(--navy);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    z-index: 300;
-  }
-  .nav__overlay.is-open {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  /* Overlay not needed — nav__links covers full screen */
+  .nav__overlay { display: none !important; }
 
   /* Links container — centered on screen, solid bg */
   .nav__links {
@@ -838,7 +826,7 @@ ul  { list-style: none; }
     gap: 0;
     padding: 0;
     background: var(--navy);
-    z-index: 301;
+    z-index: 10;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;

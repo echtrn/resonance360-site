@@ -48,6 +48,7 @@
     navToggle && navToggle.classList.remove('is-open');
     navToggle && navToggle.setAttribute('aria-expanded', 'false');
     navOverlay.classList.remove('is-open');
+    nav && nav.classList.remove('is-menu-open');
     document.body.style.overflow = '';
   }
 
@@ -58,6 +59,7 @@
       navToggle.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
       navOverlay.classList.toggle('is-open', isOpen);
+      nav.classList.toggle('is-menu-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
