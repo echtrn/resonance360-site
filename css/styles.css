@@ -854,7 +854,7 @@ ul  { list-style: none; }
     pointer-events: auto;
   }
   .nav__link {
-    padding: var(--sp-6) var(--sp-2);
+    padding: var(--sp-12) var(--sp-2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     font-size: 1.25rem;
     font-weight: 500;
@@ -869,7 +869,7 @@ ul  { list-style: none; }
   .nav__link--cta {
     margin-left: 0;
     margin-top: var(--sp-4);
-    padding: var(--sp-6) var(--sp-2);
+    padding: var(--sp-12) var(--sp-2);
     font-size: 1.25rem;
     border: none;
     background: none;
