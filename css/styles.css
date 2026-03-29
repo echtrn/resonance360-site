@@ -852,7 +852,7 @@ ul  { list-style: none; }
   .nav__panel-header,
   .nav__panel-footer { display: none; }
 
-  /* Links — centered, staggered fade-up */
+  /* Links — centered */
   .nav__link {
     display: block;
     padding: var(--sp-5) var(--sp-4);
@@ -860,24 +860,10 @@ ul  { list-style: none; }
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
     text-align: center;
     position: relative;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: color var(--t-fast),
-                opacity 0.4s ease,
-                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .nav__links.is-open .nav__link {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .nav__links.is-open li:nth-child(1) .nav__link { transition-delay: 0.06s; }
-  .nav__links.is-open li:nth-child(2) .nav__link { transition-delay: 0.12s; }
-  .nav__links.is-open li:nth-child(3) .nav__link { transition-delay: 0.18s; }
-  .nav__links.is-open li:nth-child(4) .nav__link { transition-delay: 0.24s; }
-  .nav__links.is-open li:nth-child(5) .nav__link { transition-delay: 0.30s; }
 
   /* Active link — white + teal dot */
   .nav__link.active {
