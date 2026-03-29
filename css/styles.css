@@ -843,7 +843,7 @@ ul  { list-style: none; }
   /* Links — centered */
   .nav__link {
     display: block;
-    padding: var(--sp-4) var(--sp-4);
+    padding: var(--sp-2) var(--sp-4);
     border-bottom: none;
     font-size: 1.5rem;
     font-weight: 300;
