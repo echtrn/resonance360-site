@@ -21,38 +21,44 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll(); // run once on init
 
+  // ── Nav: create backdrop overlay for mobile slide-in ──────
+  const navOverlay = document.createElement('div');
+  navOverlay.className = 'nav__overlay';
+  navOverlay.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(navOverlay);
+
+  function closeNav() {
+    navLinks && navLinks.classList.remove('is-open');
+    navToggle && navToggle.classList.remove('is-open');
+    navToggle && navToggle.setAttribute('aria-expanded', 'false');
+    navOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
   // ── Nav: hamburger toggle ─────────────────────────────────
   if (navToggle) {
     navToggle.addEventListener('click', function () {
       const isOpen = navLinks.classList.toggle('is-open');
       navToggle.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
-      // Prevent body scroll when mobile nav is open
+      navOverlay.classList.toggle('is-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
 
+  // Close mobile nav when overlay is tapped
+  navOverlay.addEventListener('click', closeNav);
+
   // Close mobile nav when a link is clicked
   if (navLinks) {
     navLinks.querySelectorAll('.nav__link').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('is-open');
-        if (navToggle) {
-          navToggle.classList.remove('is-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeNav);
     });
   }
 
   // Close mobile nav on resize to desktop
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) {
-      navLinks && navLinks.classList.remove('is-open');
-      navToggle && navToggle.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
+    if (window.innerWidth > 768) closeNav();
   });
 
   // ── Nav: active link by current page ─────────────────────

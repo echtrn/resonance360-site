@@ -260,6 +260,9 @@ ul  { list-style: none; }
 }
 .nav__link--cta.active::after { display: none; }
 
+/* Backdrop overlay — hidden on desktop, shown on mobile via media query */
+.nav__overlay { display: none; }
+
 /* Hamburger */
 .nav__hamburger {
   display: none;
@@ -806,42 +809,72 @@ ul  { list-style: none; }
     --container-pad: 1.25rem;
   }
 
-  /* Nav mobile */
+  /* Nav mobile — slide-in panel */
   .nav__hamburger { display: flex; }
 
-  .nav__links {
+  /* Dimmed backdrop */
+  .nav__overlay {
+    display: block;
     position: fixed;
-    top: var(--nav-height);
-    left: 0; right: 0;
-    background: var(--navy);
-    flex-direction: column;
-    align-items: stretch;
-    padding: var(--sp-4) var(--sp-6) var(--sp-8);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    transform: translateY(-8px);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: all var(--t-base);
-    gap: 0;
-    box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+    transition: opacity var(--t-base);
+    z-index: 199;
   }
-  .nav__links.is-open {
-    transform: translateY(0);
+  .nav__overlay.is-open {
     opacity: 1;
     pointer-events: auto;
   }
+
+  .nav__links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 80%;
+    max-width: 320px;
+    background: var(--navy);
+    flex-direction: column;
+    align-items: stretch;
+    padding: calc(var(--nav-height) + var(--sp-8)) var(--sp-8) var(--sp-8);
+    transform: translateX(100%);
+    opacity: 1;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 0;
+    box-shadow: -16px 0 48px rgba(0, 0, 0, 0.3);
+    z-index: 200;
+    overflow-y: auto;
+  }
+  .nav__links.is-open {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
   .nav__link {
-    padding: var(--sp-6) var(--sp-4);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    font-size: 1rem;
+    padding: var(--sp-5) var(--sp-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .nav__link:last-child { border-bottom: none; }
+  .nav__link.active {
+    color: var(--white);
   }
   .nav__link.active::after { display: none; }
   .nav__link--cta {
     margin-left: 0;
-    margin-top: var(--sp-4);
+    margin-top: var(--sp-6);
     text-align: center;
     border-radius: var(--r-sm);
     justify-content: center;
+    padding: var(--sp-4) var(--sp-5);
+    font-size: 0.9375rem;
+    border-bottom: none;
   }
 
   /* Hero */
