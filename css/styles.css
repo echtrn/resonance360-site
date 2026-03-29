@@ -896,7 +896,7 @@ ul  { list-style: none; }
   /* Links — staggered entrance */
   .nav__link {
     padding: var(--sp-8) var(--sp-2);
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 1.25rem;
     font-weight: 400;
     letter-spacing: -0.01em;
