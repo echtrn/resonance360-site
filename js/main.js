@@ -27,6 +27,22 @@
   navOverlay.setAttribute('aria-hidden', 'true');
   document.body.appendChild(navOverlay);
 
+  // ── Nav: panel header (logo) and footer (email + tagline) ─
+  if (navLinks) {
+    var headerLi = document.createElement('li');
+    headerLi.className = 'nav__panel-header';
+    headerLi.setAttribute('role', 'presentation');
+    headerLi.innerHTML = '<span class="nav__panel-logo">Resonance 360</span><span class="nav__logo-dot" aria-hidden="true"></span>';
+    navLinks.insertBefore(headerLi, navLinks.firstChild);
+
+    var footerLi = document.createElement('li');
+    footerLi.className = 'nav__panel-footer';
+    footerLi.setAttribute('role', 'presentation');
+    footerLi.innerHTML = '<a href="mailto:hello@resonance360.com" class="nav__panel-email">hello@resonance360.com</a>'
+      + '<p class="nav__panel-tagline">Precision Radiology.<br>Intelligent Innovation.</p>';
+    navLinks.appendChild(footerLi);
+  }
+
   function closeNav() {
     navLinks && navLinks.classList.remove('is-open');
     navToggle && navToggle.classList.remove('is-open');
