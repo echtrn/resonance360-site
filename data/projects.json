@@ -1,4 +1,19 @@
 {
   "clinical": [],
-  "ai": []
+  "ai": [
+    {
+      "title": "Cannot Exclude™",
+      "summary": "A satirical radiology hedging engine. Paste a normal report, pick an intensity tier, watch clinical certainty become defensible uncertainty. A weekend build mirroring how radiologists communicate - LLM proxy, rate limiting, and bot protection on a serverless edge stack.",
+      "year": "2026",
+      "tags": ["Side Project", "LLM", "Satire"],
+      "link": "https://cannot-exclude.vercel.app"
+    },
+    {
+      "title": "Artemis II Interactive Guide",
+      "summary": "An interactive web guide teaching orbital mechanics through NASA's Artemis II mission. Four chapters covering orbits, trans-lunar injection, gravity assists, and reentry - built as a creative side project to demonstrate technical storytelling outside the medical domain.",
+      "year": "2026",
+      "tags": ["Side Project", "Interactive", "Storytelling"],
+      "link": "https://echtrn.github.io/artemis-ii/"
+    }
+  ]
 }
