@@ -48,6 +48,21 @@
         grid.appendChild(card);
       });
 
+      // Observe new cards for reveal animation (main.js already finished scanning before fetch resolved)
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        grid.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+      } else {
+        grid.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
       // "View all" toggle
       if (items.length > VISIBLE_COUNT) {
         var toggle = document.createElement('button');
