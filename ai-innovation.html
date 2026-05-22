@@ -448,13 +448,13 @@
       margin: 0;
     }
 
-    /* Card colour variation - posts white, projects teal-tinted, follow navy (existing) */
+    /* Card distinction - all white background; projects get a thin teal top accent */
+    .ai-carousel .post-card:not(.post-card--follow),
     .ai-carousel .project-card {
-      background: var(--teal-dim);
-      border-color: rgba(13, 148, 136, 0.18);
-    }
-    .ai-carousel .post-card:not(.post-card--follow) {
       background: var(--white);
+    }
+    .ai-carousel .project-card {
+      border-top: 3px solid var(--teal);
     }
 
     /* Touch-only devices: hide arrows, narrow the fade so a peek of next card is still clear */
