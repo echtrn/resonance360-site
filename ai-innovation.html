@@ -319,6 +319,82 @@
       color: var(--teal);
     }
 
+    /* ── Combined carousel (work + writing) ──────────────── */
+    .ai-carousel {
+      padding: var(--sp-20) 0 var(--sp-24);
+      background: var(--off-white);
+    }
+    .ai-carousel__intro {
+      margin-bottom: var(--sp-10);
+      max-width: 720px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--sp-6);
+      flex-wrap: wrap;
+    }
+    .ai-carousel__intro-text { flex: 1 1 400px; }
+    .ai-carousel__heading {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: var(--sp-3);
+    }
+    .ai-carousel__sub {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+    .ai-carousel__hint {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding-bottom: var(--sp-1);
+    }
+
+    /* Override .projects__grid inside the carousel to be a horizontal track */
+    .ai-carousel .projects__grid {
+      display: flex;
+      flex-direction: row;
+      gap: var(--sp-5);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: var(--sp-2) 0 var(--sp-5);
+      scrollbar-width: thin;
+      scrollbar-color: var(--grey-200) transparent;
+    }
+    .ai-carousel .projects__grid::-webkit-scrollbar { height: 6px; }
+    .ai-carousel .projects__grid::-webkit-scrollbar-track { background: transparent; }
+    .ai-carousel .projects__grid::-webkit-scrollbar-thumb {
+      background: var(--grey-200);
+      border-radius: 100px;
+    }
+    .ai-carousel .projects__grid::-webkit-scrollbar-thumb:hover { background: var(--grey-400); }
+
+    /* Each card behaves as a fixed-width snap target */
+    .ai-carousel .projects__grid > .post-card,
+    .ai-carousel .projects__grid > .project-card {
+      flex: 0 0 360px;
+      scroll-snap-align: start;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .ai-carousel .projects__grid > .post-card,
+      .ai-carousel .projects__grid > .project-card {
+        flex: 0 0 84vw;
+      }
+    }
+
     /* ── Partner CTA ─────────────────────────────────────── */
     .partner-cta {
       background: var(--navy-mid);
@@ -403,6 +479,7 @@
         <li><a href="about.html"         class="nav__link">About</a></li>
         <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
         <li><a href="ai-innovation.html" class="nav__link active">AI &amp; Innovation</a></li>
+        <li><a href="faq.html"           class="nav__link">FAQ</a></li>
         <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
       </ul>
     </div>
@@ -552,126 +629,117 @@
       </div>
     </section>
 
-    <!-- ── Thought Leadership ──────────────────────────────── -->
-    <section class="thought-leadership" aria-label="Thought leadership">
+    <!-- ── Selected Work & Writing (combined carousel) ─────── -->
+    <section class="ai-carousel" aria-label="Selected work and writing">
       <div class="container">
 
-        <div class="thought-leadership__intro reveal">
-          <span class="label">Thinking Out Loud</span>
-          <h2 class="thought-leadership__heading">Published thinking on radiology,<br />AI, and the space between.</h2>
-          <p class="thought-leadership__sub">
-            Dr Tham writes regularly on LinkedIn about healthcare AI, governance,
-            and the evolving role of the radiologist. A selection of recent pieces below.
+        <div class="ai-carousel__intro reveal">
+          <div class="ai-carousel__intro-text">
+            <span class="label">Selected Work &amp; Writing</span>
+            <h2 class="ai-carousel__heading">Projects, side builds, and<br />published thinking.</h2>
+            <p class="ai-carousel__sub">
+              A mix of clinical AI work, technical side projects, and recent
+              pieces on radiology, governance, and the role of the subspecialist.
+            </p>
+          </div>
+          <p class="ai-carousel__hint" aria-hidden="true">
+            Swipe / scroll
+            <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+              <path d="M2 5h16M14 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </p>
         </div>
 
-        <div class="posts-grid">
-
-          <!-- Post 1 - AI in Healthcare Guidelines 2.0 -->
-          <article class="post-card reveal reveal-delay-1">
-            <div class="post-card__meta">
-              <span class="post-card__tag">Governance</span>
-              <span class="post-card__date">Dec 2024</span>
-            </div>
-            <h3 class="post-card__heading">Singapore's AI in Healthcare Guidelines 2.0 - who owns what?</h3>
-            <p class="post-card__excerpt">
-              Singapore's updated framework defines three distinct stakeholder groups
-              across the AI lifecycle: Developers, Deployers, and Users. Each carries
-              specific obligations - from transparency and testing, to governance and
-              risk assessment, to professional judgment and human oversight.
-            </p>
-            <blockquote class="post-card__quote">
-              "Most deployment friction comes from exactly this: unclear ownership."
-            </blockquote>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="post-card__link">
-              Read on LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-
-          <!-- Post 2 - Budget 2026 / National AI Council -->
-          <article class="post-card reveal reveal-delay-2">
-            <div class="post-card__meta">
-              <span class="post-card__tag">Policy</span>
-              <span class="post-card__date">Feb 2025</span>
-            </div>
-            <h3 class="post-card__heading">Singapore's National AI Council - balancing governance with startup agility</h3>
-            <p class="post-card__excerpt">
-              Budget 2026 signalled Singapore's intent to formalise AI governance
-              at a national level. The question for healthcare AI is whether
-              regulation will move fast enough to enable innovation, or slow enough
-              to protect it. A look at what inclusive governance actually requires
-              from the ground up - including the role of RADII.
-            </p>
-            <a href="https://www.linkedin.com/posts/sengchoetham_budget-2026-singapore-to-set-up-national-activity-7431328538303311873-DR-t" target="_blank" rel="noopener noreferrer" class="post-card__link">
-              Read on LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-
-          <!-- Post 3 - Private Practice / Power of Scale -->
-          <article class="post-card reveal reveal-delay-3">
-            <div class="post-card__meta">
-              <span class="post-card__tag">Radiology Practice</span>
-              <span class="post-card__date">Nov 2024</span>
-            </div>
-            <h3 class="post-card__heading">Radiology private practice - the power of scale, and what it demands</h3>
-            <p class="post-card__excerpt">
-              After 16 years in private radiology, three models emerge: restructured
-              hospitals, small independent centres, and large private groups. Scale
-              enables governance, technology investment, and systems thinking.
-              But it also raises the stakes for the people inside it.
-            </p>
-            <blockquote class="post-card__quote">
-              "The more we automate, the more crucial the driver in the seat becomes."
-            </blockquote>
-            <a href="https://www.linkedin.com/posts/sengchoetham_radiology-privatepractice-healthsystems-activity-7425781160007512064-PYXJ" target="_blank" rel="noopener noreferrer" class="post-card__link">
-              Read on LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-
-          <!-- Follow card -->
-          <article class="post-card post-card--follow reveal reveal-delay-3">
-            <div class="post-card__meta">
-              <span class="post-card__tag">LinkedIn</span>
-            </div>
-            <h3 class="post-card__heading">More published thinking</h3>
-            <p class="post-card__excerpt">
-              Dr Tham writes regularly on AI in healthcare, radiology governance,
-              and the evolving role of the subspecialist. Follow on LinkedIn
-              for the latest pieces.
-            </p>
-            <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="post-card__link">
-              Follow on LinkedIn
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Selected Projects ──────────────────────────────── -->
-    <section class="projects" aria-label="Selected AI projects">
-      <div class="container">
-        <div class="projects__intro reveal">
-          <span class="label">Selected Work</span>
-          <h2 class="projects__heading">AI &amp; innovation projects.</h2>
-          <p class="projects__sub">
-            A selection of advisory, governance, and technical projects across healthcare AI.
-          </p>
-        </div>
         <div data-projects="ai" data-src="data/projects.json">
-          <div class="projects__grid"></div>
+          <div class="projects__grid">
+
+            <!-- Post 1 - AI in Healthcare Guidelines 2.0 -->
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Governance</span>
+                <span class="post-card__date">Dec 2024</span>
+              </div>
+              <h3 class="post-card__heading">Singapore's AI in Healthcare Guidelines 2.0 - who owns what?</h3>
+              <p class="post-card__excerpt">
+                Singapore's updated framework defines three distinct stakeholder groups
+                across the AI lifecycle: Developers, Deployers, and Users. Each carries
+                specific obligations.
+              </p>
+              <blockquote class="post-card__quote">
+                "Most deployment friction comes from exactly this: unclear ownership."
+              </blockquote>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="post-card__link">
+                Read on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Post 2 - Budget 2026 / National AI Council -->
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Policy</span>
+                <span class="post-card__date">Feb 2025</span>
+              </div>
+              <h3 class="post-card__heading">Singapore's National AI Council - balancing governance with startup agility</h3>
+              <p class="post-card__excerpt">
+                Budget 2026 signalled Singapore's intent to formalise AI governance
+                at a national level. A look at what inclusive governance actually
+                requires from the ground up - including the role of RADII.
+              </p>
+              <a href="https://www.linkedin.com/posts/sengchoetham_budget-2026-singapore-to-set-up-national-activity-7431328538303311873-DR-t" target="_blank" rel="noopener noreferrer" class="post-card__link">
+                Read on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Post 3 - Private Practice / Power of Scale -->
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Radiology Practice</span>
+                <span class="post-card__date">Nov 2024</span>
+              </div>
+              <h3 class="post-card__heading">Radiology private practice - the power of scale, and what it demands</h3>
+              <p class="post-card__excerpt">
+                After 16 years in private radiology, three models emerge: restructured
+                hospitals, small independent centres, and large private groups.
+              </p>
+              <blockquote class="post-card__quote">
+                "The more we automate, the more crucial the driver in the seat becomes."
+              </blockquote>
+              <a href="https://www.linkedin.com/posts/sengchoetham_radiology-privatepractice-healthsystems-activity-7425781160007512064-PYXJ" target="_blank" rel="noopener noreferrer" class="post-card__link">
+                Read on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Follow card -->
+            <article class="post-card post-card--follow">
+              <div class="post-card__meta">
+                <span class="post-card__tag">LinkedIn</span>
+              </div>
+              <h3 class="post-card__heading">More published thinking</h3>
+              <p class="post-card__excerpt">
+                Dr Tham writes regularly on AI in healthcare, radiology governance,
+                and the evolving role of the subspecialist. Follow on LinkedIn
+                for the latest pieces.
+              </p>
+              <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="post-card__link">
+                Follow on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- projects.js appends project-card articles here -->
+
+          </div>
         </div>
       </div>
     </section>
@@ -707,6 +775,7 @@
         <a href="about.html">About</a>
         <a href="clinical.html">Clinical Services</a>
         <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="footer__contact">

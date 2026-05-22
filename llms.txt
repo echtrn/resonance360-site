@@ -1,0 +1,35 @@
+# Resonance 360
+
+> Subspecialty MSK and interventional radiology practice in Singapore, led by Dr Tham Seng Choe (MBBS NUS, FRCR UK, AMIA Clinical Informatics). Offers expert MRI second opinions, image-guided pain interventions, and clinical AI advisory. Based at Mount Elizabeth Novena Hospital.
+
+Resonance 360 is the practice of Dr Tham Seng Choe, a Senior Consultant Radiologist with 20+ years of subspecialty experience in musculoskeletal (MSK) and interventional radiology. The practice has two arms: (1) clinical services — MRI second opinions for sports, spine, joint, and soft-tissue cases, plus image-guided injections, nerve blocks, and spinal interventions; and (2) AI & innovation — advisory work bridging healthcare systems and AI companies on workflow redesign, radiology AI, and medical report optimisation. Second opinions are open to both referring clinicians and patients seeking a direct specialist read. Face-to-face consultations are not part of the second-opinion flow — the process is email enquiry → suitability review → scan submission (digital link preferred) → written subspecialty report. Located at the Radiologic Clinic, Mount Elizabeth Novena Hospital, Singapore.
+
+## Core pages
+- [Home](https://resonance360.com/): Overview of the practice and the two service lines.
+- [About Dr Tham](https://resonance360.com/about.html): Background, credentials, training (NUS, UCSF, OHSU), and society affiliations including RADII (Singapore Radiological Society) Executive Committee.
+- [Clinical Services](https://resonance360.com/clinical.html): MSK radiology second opinions and image-guided MSK/spine interventions. Full list of conditions covered and procedures offered.
+- [AI & Innovation](https://resonance360.com/ai-innovation.html): Clinical AI advisory, workflow redesign, and medical report optimisation work; selected AI/research projects.
+- [FAQ](https://resonance360.com/faq.html): Common questions about second opinions, scan submission, interventions, and the referral process.
+- [Contact](https://resonance360.com/contact.html): Enquiry form and direct email for clinical or partnership enquiries.
+
+## Key facts
+- **Practitioner**: Dr Tham Seng Choe, Senior Consultant Radiologist
+- **Credentials**: MBBS (NUS), FRCR (UK), AMIA Clinical Informatics (OHSU)
+- **Subspecialty**: Musculoskeletal and interventional radiology
+- **Location**: Radiologic Clinic, Mount Elizabeth Novena Hospital, Singapore
+- **Clinical enquiries**: dr.tham@resonance360.com
+- **General enquiries**: hello@resonance360.com
+- **Languages**: English, Mandarin, Cantonese
+
+## Services at a glance
+- **MRI / CT / ultrasound second opinions** — spine, shoulder, hip, knee, ankle/foot, wrist/hand, elbow, soft tissue, sports and overuse injuries.
+- **Image-guided interventions** (referral-based) — joint injections, tendon/bursa injections, perineural injections, epidural and facet injections, medial branch blocks, selective nerve root blocks, sacroiliac injections, vertebral augmentation, RFA for osteoid osteoma, MSK biopsy.
+- **Clinical AI advisory** — workflow design, AI model evaluation, medical report optimisation, healthcare-AI vendor partnerships.
+
+## How to engage
+- **Second opinions**: email dr.tham@resonance360.com with the clinical question; cases are reviewed for suitability before acceptance; scans are then submitted (digital link preferred, or physically to Radiologic Clinic, Mount Elizabeth Novena); a written subspecialty report is returned.
+- **Interventions**: referral-based; refer via dr.tham@resonance360.com.
+- **AI partnerships**: contact via hello@resonance360.com.
+
+## Optional
+- [Sitemap](https://resonance360.com/sitemap.xml)
