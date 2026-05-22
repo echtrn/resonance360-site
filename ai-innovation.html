@@ -359,6 +359,66 @@
       padding-bottom: var(--sp-1);
     }
 
+    /* Track wrapper holds the track + arrows + edge fades */
+    .ai-carousel__track-wrap {
+      position: relative;
+    }
+    /* Edge fades - soft vignette indicating more content off-edge */
+    .ai-carousel__track-wrap::before,
+    .ai-carousel__track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: var(--sp-5);
+      width: 56px;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 1;
+      transition: opacity var(--t-base);
+    }
+    .ai-carousel__track-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
+    }
+    .ai-carousel__track-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
+    }
+    .ai-carousel__track-wrap[data-at-start="true"]::before { opacity: 0; }
+    .ai-carousel__track-wrap[data-at-end="true"]::after { opacity: 0; }
+
+    /* Arrow buttons */
+    .ai-carousel__arrow {
+      position: absolute;
+      top: calc(50% - var(--sp-3));
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--grey-200);
+      background: var(--white);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      transition: background var(--t-base), color var(--t-base),
+                  border-color var(--t-base), opacity var(--t-base);
+    }
+    .ai-carousel__arrow:hover:not(:disabled) {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+    .ai-carousel__arrow:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+    .ai-carousel__arrow--prev { left: calc(-1 * var(--sp-4)); }
+    .ai-carousel__arrow--next { right: calc(-1 * var(--sp-4)); }
+
     /* Override .projects__grid inside the carousel to be a horizontal track */
     .ai-carousel .projects__grid {
       display: flex;
@@ -386,6 +446,22 @@
       flex: 0 0 360px;
       scroll-snap-align: start;
       margin: 0;
+    }
+
+    /* Card colour variation - posts white, projects teal-tinted, follow navy (existing) */
+    .ai-carousel .project-card {
+      background: var(--teal-dim);
+      border-color: rgba(13, 148, 136, 0.18);
+    }
+    .ai-carousel .post-card:not(.post-card--follow) {
+      background: var(--white);
+    }
+
+    /* Touch-only devices: hide arrows, narrow the fade so a peek of next card is still clear */
+    @media (hover: none) {
+      .ai-carousel__arrow { display: none; }
+      .ai-carousel__track-wrap::before,
+      .ai-carousel__track-wrap::after { width: 28px; }
     }
 
     @media (max-width: 768px) {
@@ -650,6 +726,17 @@
           </p>
         </div>
 
+        <div class="ai-carousel__track-wrap" data-at-start="true" data-at-end="false">
+          <button class="ai-carousel__arrow ai-carousel__arrow--prev" type="button" aria-label="Previous cards" disabled>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="ai-carousel__arrow ai-carousel__arrow--next" type="button" aria-label="Next cards">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         <div data-projects="ai" data-src="data/projects.json">
           <div class="projects__grid">
 
@@ -670,6 +757,32 @@
               </blockquote>
               <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="post-card__link">
                 Read on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Featured project (pinned in HTML; intentionally not in projects.json) -->
+            <article class="project-card">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Position Paper</span>
+                  <span class="project-card__tag">AI Philosophy</span>
+                  <span class="project-card__tag">SSRN</span>
+                </div>
+                <span class="project-card__year">2026</span>
+              </div>
+              <h3 class="project-card__heading">Throw Punches</h3>
+              <p class="project-card__summary">
+                A position paper arguing that AI's real value is not information access but
+                interactive challenge - sparring with intellectually fluent systems that
+                were once a privilege of elite institutions. Introduces a K-shaped
+                divergence model and five philosophical techniques for using AI as a
+                deliberate-practice partner. SSRN preprint, April 2026.
+              </p>
+              <a href="https://ssrn.com/abstract=6606399" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                View project
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -741,6 +854,7 @@
 
           </div>
         </div>
+        </div>
       </div>
     </section>
 
@@ -791,5 +905,42 @@
 
   <script src="js/main.js"></script>
   <script src="js/projects.js"></script>
+  <script>
+    // AI carousel arrow controls + edge-fade state
+    (function () {
+      var wrap = document.querySelector('.ai-carousel__track-wrap');
+      var track = document.querySelector('.ai-carousel .projects__grid');
+      var prev = document.querySelector('.ai-carousel__arrow--prev');
+      var next = document.querySelector('.ai-carousel__arrow--next');
+      if (!wrap || !track || !prev || !next) return;
+
+      function step() {
+        // Scroll by visible width minus one card peek so the next card lands at the snap start
+        return Math.max(280, track.clientWidth - 80);
+      }
+      function update() {
+        var atStart = track.scrollLeft <= 2;
+        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        prev.disabled = atStart;
+        next.disabled = atEnd;
+        wrap.setAttribute('data-at-start', atStart ? 'true' : 'false');
+        wrap.setAttribute('data-at-end', atEnd ? 'true' : 'false');
+      }
+
+      prev.addEventListener('click', function () {
+        track.scrollBy({ left: -step(), behavior: 'smooth' });
+      });
+      next.addEventListener('click', function () {
+        track.scrollBy({ left: step(), behavior: 'smooth' });
+      });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+
+      // projects.js appends cards asynchronously; recheck after fetch settles
+      update();
+      setTimeout(update, 400);
+      setTimeout(update, 1200);
+    })();
+  </script>
 </body>
 </html>

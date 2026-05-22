@@ -2,13 +2,6 @@
   "clinical": [],
   "ai": [
     {
-      "title": "Throw Punches",
-      "summary": "A position paper arguing that AI's real value is not information access but interactive challenge - sparring with intellectually fluent systems that were once a privilege of elite institutions. Introduces a K-shaped divergence model and five philosophical techniques (Confucian, Socratic, Humean, Millian, Zenonic) for using AI as a deliberate-practice partner. SSRN preprint, April 2026.",
-      "year": "2026",
-      "tags": ["Position Paper", "AI Philosophy", "SSRN"],
-      "link": "https://ssrn.com/abstract=6606399"
-    },
-    {
       "title": "Cannot Exclude™",
       "summary": "A satirical radiology hedging engine. Paste a normal report, pick an intensity tier, watch clinical certainty become defensible uncertainty. A weekend build mirroring how radiologists communicate - LLM proxy, rate limiting, and bot protection on a serverless edge stack.",
       "year": "2026",
