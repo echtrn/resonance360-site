@@ -448,13 +448,41 @@
       margin: 0;
     }
 
-    /* Card distinction - all white background; projects get a thin teal top accent */
-    .ai-carousel .post-card:not(.post-card--follow),
-    .ai-carousel .project-card {
+    /* Card alternation - odd positions navy, even white. Provides clear rhythm + scroll affordance. */
+    .ai-carousel .projects__grid > .post-card,
+    .ai-carousel .projects__grid > .project-card {
       background: var(--white);
+      border-color: var(--grey-200);
     }
-    .ai-carousel .project-card {
-      border-top: 3px solid var(--teal);
+    .ai-carousel .projects__grid > *:nth-child(odd) {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__heading,
+    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__heading {
+      color: var(--white);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__excerpt,
+    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__summary {
+      color: rgba(255, 255, 255, 0.55);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__date,
+    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__year {
+      color: rgba(255, 255, 255, 0.35);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__tag,
+    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__tag {
+      background: rgba(13, 148, 136, 0.18);
+      color: var(--teal);
+      border-color: rgba(13, 148, 136, 0.3);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__quote {
+      color: rgba(255, 255, 255, 0.78);
+      border-left-color: var(--teal);
+    }
+    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__link,
+    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__link {
+      color: var(--teal);
     }
 
     /* Touch-only devices: hide arrows, narrow the fade so a peek of next card is still clear */
@@ -737,10 +765,28 @@
               <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-        <div data-projects="ai" data-src="data/projects.json">
-          <div class="projects__grid">
+        <div class="projects__grid">
 
-            <!-- Post 1 - AI in Healthcare Guidelines 2.0 -->
+            <!-- Card 1 (navy via :nth-child(odd)): Follow / Published thinking -->
+            <article class="post-card post-card--follow">
+              <div class="post-card__meta">
+                <span class="post-card__tag">LinkedIn</span>
+              </div>
+              <h3 class="post-card__heading">More published thinking</h3>
+              <p class="post-card__excerpt">
+                Dr Tham writes regularly on AI in healthcare, radiology governance,
+                and the evolving role of the subspecialist. Follow on LinkedIn
+                for the latest pieces.
+              </p>
+              <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="post-card__link">
+                Follow on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Card 2 (white): Post - Governance -->
             <article class="post-card">
               <div class="post-card__meta">
                 <span class="post-card__tag">Governance</span>
@@ -763,7 +809,7 @@
               </a>
             </article>
 
-            <!-- Featured project (pinned in HTML; intentionally not in projects.json) -->
+            <!-- Card 3 (navy via :nth-child(odd)): Project - Throw Punches -->
             <article class="project-card">
               <div class="project-card__meta">
                 <div class="project-card__tags">
@@ -789,7 +835,7 @@
               </a>
             </article>
 
-            <!-- Post 2 - Budget 2026 / National AI Council -->
+            <!-- Card 4 (white): Post - Policy -->
             <article class="post-card">
               <div class="post-card__meta">
                 <span class="post-card__tag">Policy</span>
@@ -809,7 +855,32 @@
               </a>
             </article>
 
-            <!-- Post 3 - Private Practice / Power of Scale -->
+            <!-- Card 5 (navy via :nth-child(odd)): Project - Cannot Exclude -->
+            <article class="project-card">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Side Project</span>
+                  <span class="project-card__tag">LLM</span>
+                  <span class="project-card__tag">Satire</span>
+                </div>
+                <span class="project-card__year">2026</span>
+              </div>
+              <h3 class="project-card__heading">Cannot Exclude&trade;</h3>
+              <p class="project-card__summary">
+                A satirical radiology hedging engine. Paste a normal report, pick an
+                intensity tier, watch clinical certainty become defensible uncertainty.
+                A weekend build mirroring how radiologists communicate - LLM proxy,
+                rate limiting, and bot protection on a serverless edge stack.
+              </p>
+              <a href="https://cannot-exclude.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                View project
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- Card 6 (white): Post - Private Practice -->
             <article class="post-card">
               <div class="post-card__meta">
                 <span class="post-card__tag">Radiology Practice</span>
@@ -831,28 +902,31 @@
               </a>
             </article>
 
-            <!-- Follow card -->
-            <article class="post-card post-card--follow">
-              <div class="post-card__meta">
-                <span class="post-card__tag">LinkedIn</span>
+            <!-- Card 7 (navy via :nth-child(odd)): Project - Artemis II -->
+            <article class="project-card">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Side Project</span>
+                  <span class="project-card__tag">Interactive</span>
+                  <span class="project-card__tag">Storytelling</span>
+                </div>
+                <span class="project-card__year">2026</span>
               </div>
-              <h3 class="post-card__heading">More published thinking</h3>
-              <p class="post-card__excerpt">
-                Dr Tham writes regularly on AI in healthcare, radiology governance,
-                and the evolving role of the subspecialist. Follow on LinkedIn
-                for the latest pieces.
+              <h3 class="project-card__heading">Artemis II Interactive Guide</h3>
+              <p class="project-card__summary">
+                An interactive web guide teaching orbital mechanics through NASA's
+                Artemis II mission. Four chapters covering orbits, trans-lunar
+                injection, gravity assists, and reentry - a creative side project
+                demonstrating technical storytelling outside the medical domain.
               </p>
-              <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="post-card__link">
-                Follow on LinkedIn
+              <a href="https://echtrn.github.io/artemis-ii/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                View project
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
             </article>
 
-            <!-- projects.js appends project-card articles here -->
-
-          </div>
         </div>
         </div>
       </div>
