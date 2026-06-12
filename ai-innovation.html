@@ -6,19 +6,28 @@
   <title>Radiology AI Consulting Singapore | Clinical AI Partnership</title>
   <meta name="description" content="Clinical AI advisory, radiology workflow redesign, and structured reporting optimisation. Singapore-based, led by a senior consultant radiologist with deep AI deployment experience." />
   <meta name="keywords" content="radiology AI Singapore, healthcare AI consulting, clinical AI advisory, AI radiology workflow, medical imaging AI, structured reporting AI" />
-  <link rel="canonical" href="https://resonance360.com/ai-innovation.html" />
+  <link rel="canonical" href="https://www.resonance360.com/ai-innovation.html" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://resonance360.com/ai-innovation.html" />
+  <meta property="og:url" content="https://www.resonance360.com/ai-innovation.html" />
   <meta property="og:title" content="Radiology AI Consulting Singapore | Resonance 360" />
   <meta property="og:description" content="Clinical AI advisory and workflow redesign by a senior consultant radiologist with deep AI deployment experience. Singapore." />
-  <meta property="og:image" content="https://resonance360.com/assets/images/dr-tham.jpg" />
+  <meta property="og:image" content="https://www.resonance360.com/assets/images/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Resonance 360 — Precision Radiology. Intelligent Innovation." />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Structured data -->
@@ -28,10 +37,10 @@
     "@type": "ProfessionalService",
     "name": "Resonance 360 — Clinical AI Partnership",
     "description": "Radiology AI advisory, workflow redesign, governance, and structured reporting optimisation, grounded in real subspecialty radiology practice.",
-    "provider": { "@id": "https://resonance360.com/about.html#person" },
+    "provider": { "@id": "https://www.resonance360.com/about.html#person" },
     "areaServed": { "@type": "Country", "name": "Singapore" },
     "serviceType": ["Clinical AI Advisory", "Radiology Workflow Redesign", "Structured Reporting Optimisation", "AI Governance"],
-    "url": "https://resonance360.com/ai-innovation.html"
+    "url": "https://www.resonance360.com/ai-innovation.html"
   }
   </script>
   <script type="application/ld+json">
@@ -39,14 +48,14 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://resonance360.com/" },
-      { "@type": "ListItem", "position": 2, "name": "AI & Innovation", "item": "https://resonance360.com/ai-innovation.html" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.resonance360.com/" },
+      { "@type": "ListItem", "position": 2, "name": "AI & Innovation", "item": "https://www.resonance360.com/ai-innovation.html" }
     ]
   }
   </script>
   <style>
 
-    /* ── AI page hero override - mono heading ────────────── */
+    /* ── AI page hero override — mono heading ────────────── */
     .page-hero--ai .page-hero__heading {
       font-family: var(--font-mono);
       font-weight: 500;
@@ -158,7 +167,7 @@
     .ai-service-item__desc {
       font-size: 0.9rem;
       line-height: 1.8;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.72);
     }
 
     .ai-service-item__right {}
@@ -167,7 +176,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.68);
       margin-bottom: var(--sp-4);
     }
     .ai-service-item__points {
@@ -181,7 +190,7 @@
       gap: var(--sp-3);
       font-size: 0.875rem;
       line-height: 1.6;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.68);
     }
     .ai-service-item__point::before {
       content: '—';
@@ -297,7 +306,7 @@
       color: var(--teal-hover);
     }
 
-    /* LinkedIn follow card - spans full second row or fills slot */
+    /* LinkedIn follow card — spans full second row or fills slot */
     .post-card--follow {
       background: var(--navy);
       border-color: var(--navy);
@@ -313,7 +322,7 @@
       color: var(--white);
     }
     .post-card--follow .post-card__excerpt {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.68);
     }
     .post-card--follow .post-card__link {
       color: var(--teal);
@@ -359,144 +368,167 @@
       padding-bottom: var(--sp-1);
     }
 
-    /* Track wrapper holds the track + arrows + edge fades */
+    /* Track wrapper — also hosts arrows + edge fades in carousel mode */
     .ai-carousel__track-wrap {
       position: relative;
     }
-    /* Edge fades - soft vignette indicating more content off-edge */
-    .ai-carousel__track-wrap::before,
-    .ai-carousel__track-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: var(--sp-5);
-      width: 56px;
-      pointer-events: none;
-      z-index: 2;
-      opacity: 1;
-      transition: opacity var(--t-base);
-    }
-    .ai-carousel__track-wrap::before {
-      left: 0;
-      background: linear-gradient(to right, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
-    }
-    .ai-carousel__track-wrap::after {
-      right: 0;
-      background: linear-gradient(to left, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
-    }
-    .ai-carousel__track-wrap[data-at-start="true"]::before { opacity: 0; }
-    .ai-carousel__track-wrap[data-at-end="true"]::after { opacity: 0; }
 
-    /* Arrow buttons */
-    .ai-carousel__arrow {
-      position: absolute;
-      top: calc(50% - var(--sp-3));
-      transform: translateY(-50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 1px solid var(--grey-200);
-      background: var(--white);
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 3;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-      transition: background var(--t-base), color var(--t-base),
-                  border-color var(--t-base), opacity var(--t-base);
-    }
-    .ai-carousel__arrow:hover:not(:disabled) {
-      background: var(--teal);
-      color: var(--white);
-      border-color: var(--teal);
-    }
-    .ai-carousel__arrow:disabled {
-      opacity: 0.3;
-      cursor: default;
-    }
-    .ai-carousel__arrow--prev { left: calc(-1 * var(--sp-4)); }
-    .ai-carousel__arrow--next { right: calc(-1 * var(--sp-4)); }
-
-    /* Override .projects__grid inside the carousel to be a horizontal track */
+    /* Desktop: editorial grid — featured piece spans the full row */
     .ai-carousel .projects__grid {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-5);
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: var(--sp-2) 0 var(--sp-5);
-      scrollbar-width: thin;
-      scrollbar-color: var(--grey-200) transparent;
     }
-    .ai-carousel .projects__grid::-webkit-scrollbar { height: 6px; }
-    .ai-carousel .projects__grid::-webkit-scrollbar-track { background: transparent; }
-    .ai-carousel .projects__grid::-webkit-scrollbar-thumb {
-      background: var(--grey-200);
-      border-radius: 100px;
-    }
-    .ai-carousel .projects__grid::-webkit-scrollbar-thumb:hover { background: var(--grey-400); }
+    .ai-carousel__arrow { display: none; }
+    .ai-carousel__hint  { display: none; }
 
-    /* Each card behaves as a fixed-width snap target */
+    /* Unified card treatment: white cards, thin teal top accent */
     .ai-carousel .projects__grid > .post-card,
     .ai-carousel .projects__grid > .project-card {
-      flex: 0 0 360px;
-      scroll-snap-align: start;
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-top: 3px solid var(--teal);
       margin: 0;
     }
 
-    /* Card alternation - odd positions navy, even white. Provides clear rhythm + scroll affordance. */
-    .ai-carousel .projects__grid > .post-card,
-    .ai-carousel .projects__grid > .project-card {
-      background: var(--white);
-      border-color: var(--grey-200);
-    }
-    .ai-carousel .projects__grid > *:nth-child(odd) {
+    /* Follow card stays navy */
+    .ai-carousel .projects__grid > .post-card--follow {
       background: var(--navy);
       border-color: var(--navy);
+      border-top: 3px solid var(--teal);
     }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__heading,
-    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__heading {
+
+    /* Featured card — navy, full row, two-column editorial layout */
+    .ai-carousel .projects__grid > .card--featured {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      border-color: var(--navy);
+      border-top: 3px solid var(--teal);
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      gap: var(--sp-12);
+      align-items: center;
+      padding: var(--sp-10);
+    }
+    .card--featured .project-card__heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 600;
       color: var(--white);
+      line-height: 1.2;
+      margin: var(--sp-5) 0 var(--sp-6);
     }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__excerpt,
-    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__summary {
-      color: rgba(255, 255, 255, 0.55);
+    .card--featured .project-card__summary {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.9375rem;
+      flex: none;
+      margin-bottom: 0;
     }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__date,
-    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__year {
-      color: rgba(255, 255, 255, 0.35);
-    }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__tag,
-    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__tag {
+    .card--featured .project-card__tag {
       background: rgba(13, 148, 136, 0.18);
-      color: var(--teal);
       border-color: rgba(13, 148, 136, 0.3);
     }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__quote {
-      color: rgba(255, 255, 255, 0.78);
-      border-left-color: var(--teal);
-    }
-    .ai-carousel .projects__grid > *:nth-child(odd) .post-card__link,
-    .ai-carousel .projects__grid > *:nth-child(odd) .project-card__link {
-      color: var(--teal);
+    .card--featured .project-card__year {
+      color: rgba(255, 255, 255, 0.4);
     }
 
-    /* Touch-only devices: hide arrows, narrow the fade so a peek of next card is still clear */
-    @media (hover: none) {
-      .ai-carousel__arrow { display: none; }
+    /* Mobile / narrow: horizontal snap carousel */
+    @media (max-width: 960px) {
+      .ai-carousel__hint { display: flex; }
+      .ai-carousel__arrow {
+        display: flex;
+        position: absolute;
+        top: calc(50% - var(--sp-3));
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--grey-200);
+        background: var(--white);
+        color: var(--navy);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 3;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        transition: background var(--t-base), color var(--t-base),
+                    border-color var(--t-base), opacity var(--t-base);
+      }
+      .ai-carousel__arrow:hover:not(:disabled) {
+        background: var(--teal);
+        color: var(--white);
+        border-color: var(--teal);
+      }
+      .ai-carousel__arrow:disabled { opacity: 0.3; cursor: default; }
+      .ai-carousel__arrow--prev { left: calc(-1 * var(--sp-4)); }
+      .ai-carousel__arrow--next { right: calc(-1 * var(--sp-4)); }
+
+      /* Edge fades — soft vignette indicating more content off-edge */
       .ai-carousel__track-wrap::before,
-      .ai-carousel__track-wrap::after { width: 28px; }
-    }
+      .ai-carousel__track-wrap::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: var(--sp-5);
+        width: 40px;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity var(--t-base);
+      }
+      .ai-carousel__track-wrap::before {
+        left: 0;
+        background: linear-gradient(to right, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
+      }
+      .ai-carousel__track-wrap::after {
+        right: 0;
+        background: linear-gradient(to left, var(--off-white) 0%, rgba(248, 250, 252, 0) 100%);
+      }
+      .ai-carousel__track-wrap[data-at-start="true"]::before { opacity: 0; }
+      .ai-carousel__track-wrap[data-at-end="true"]::after { opacity: 0; }
 
-    @media (max-width: 768px) {
+      .ai-carousel .projects__grid {
+        display: flex;
+        flex-direction: row;
+        gap: var(--sp-5);
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: var(--sp-2) 0 var(--sp-5);
+        scrollbar-width: thin;
+        scrollbar-color: var(--grey-200) transparent;
+      }
+      .ai-carousel .projects__grid::-webkit-scrollbar { height: 6px; }
+      .ai-carousel .projects__grid::-webkit-scrollbar-track { background: transparent; }
+      .ai-carousel .projects__grid::-webkit-scrollbar-thumb {
+        background: var(--grey-200);
+        border-radius: 100px;
+      }
       .ai-carousel .projects__grid > .post-card,
       .ai-carousel .projects__grid > .project-card {
         flex: 0 0 84vw;
+        max-width: 380px;
+        scroll-snap-align: start;
       }
+      .ai-carousel .projects__grid > .card--featured {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: var(--sp-8);
+      }
+      .card--featured .project-card__heading {
+        font-size: 1.35rem;
+        margin: var(--sp-4) 0 var(--sp-4);
+      }
+    }
+
+    /* Touch devices: no arrows, narrower fades */
+    @media (hover: none) {
+      .ai-carousel__arrow { display: none !important; }
+      .ai-carousel__track-wrap::before,
+      .ai-carousel__track-wrap::after { width: 28px; }
     }
 
     /* ── Partner CTA ─────────────────────────────────────── */
@@ -523,7 +555,7 @@
     .partner-cta__sub {
       font-size: 0.9375rem;
       line-height: 1.75;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.68);
       max-width: 480px;
     }
     .partner-cta__actions {
@@ -583,6 +615,7 @@
         <li><a href="about.html"         class="nav__link">About</a></li>
         <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
         <li><a href="ai-innovation.html" class="nav__link active">AI &amp; Innovation</a></li>
+        <li><a href="insights.html"      class="nav__link">Insights</a></li>
         <li><a href="faq.html"           class="nav__link">FAQ</a></li>
         <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
       </ul>
@@ -597,7 +630,7 @@
       <p class="page-hero__sub">
         Bridging deep radiology expertise with the healthcare AI ecosystem.
         For AI companies and healthcare systems that need a credible clinical
-        partner - someone who understands both sides of the room.
+        partner — someone who understands both sides of the room.
       </p>
     </div>
   </header>
@@ -616,10 +649,10 @@
             <p class="ai-positioning__body">
               Most AI tools in healthcare are built by people who understand
               machine learning. Fewer are shaped by people who understand
-              what a radiologist actually does - how they read, how they decide,
+              what a radiologist actually does — how they read, how they decide,
               where the friction lives, and what the technology has to survive
-              to be useful. That clinical grounding is what Resonance 360 brings
-              to AI partnerships.
+              to be useful. That clinical grounding is what Dr Tham brings
+              to every AI partnership.
             </p>
           </div>
           <div class="reveal reveal-delay-2">
@@ -660,8 +693,8 @@
               <p class="ai-service-item__desc">
                 For AI companies and vendors seeking a credible clinical partner
                 to shape, validate, or advocate for their product within healthcare
-                systems. Resonance 360 provides frank, subspecialty-grounded clinical
-                input - not endorsement, but genuine engagement with what the technology
+                systems. Dr Tham provides frank, subspecialty-grounded clinical
+                input — not endorsement, but genuine engagement with what the technology
                 does, where it works, and where it falls short in real clinical conditions.
               </p>
             </div>
@@ -684,9 +717,9 @@
               <h3 class="ai-service-item__heading">Workflow Redesign</h3>
               <p class="ai-service-item__desc">
                 Most AI implementations fail not because the technology is wrong,
-                but because the workflow around it hasn't changed. Resonance 360
+                but because the workflow around it hasn't changed. Dr Tham
                 offers clinical workflow analysis for radiology departments and healthcare
-                systems seeking to integrate AI and automation - identifying where AI
+                systems seeking to integrate AI and automation — identifying where AI
                 meaningfully reduces friction, where it introduces new risks, and how
                 to build governance and training structures for sustainable adoption.
               </p>
@@ -710,11 +743,11 @@
               <h3 class="ai-service-item__heading">Medical Report Generation<br />&amp; Optimisation</h3>
               <p class="ai-service-item__desc">
                 Radiology reporting is one of the highest-leverage applications of
-                AI in healthcare - and one of the most poorly executed. Resonance 360
+                AI in healthcare — and one of the most poorly executed. Dr Tham
                 advises on structured reporting pipeline design, AI-assisted report
                 generation, and the development of patient-friendly report outputs.
                 Grounded in real reporting practice, this work is about quality,
-                clarity, and accountability - not just speed.
+                clarity, and accountability — not just speed.
               </p>
             </div>
             <div class="ai-service-item__right">
@@ -766,8 +799,143 @@
             </svg>
           </button>
         <div class="projects__grid">
+            <article class="project-card card--featured">
+              <div class="card--featured__lead">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Position Paper</span>
+                  <span class="project-card__tag">AI Philosophy</span>
+                  <span class="project-card__tag">SSRN</span>
+                </div>
+                <span class="project-card__year">2026</span>
+              </div>
+              <h3 class="project-card__heading">Throw Punches</h3>
+              <a href="https://ssrn.com/abstract=6606399" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                Read the paper on SSRN
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              </div>
+              <p class="project-card__summary">
+                A position paper arguing that AI's real value is not information access but
+                interactive challenge — sparring with intellectually fluent systems that
+                were once a privilege of elite institutions. Introduces a K-shaped
+                divergence model and five philosophical techniques for using AI as a
+                deliberate-practice partner. SSRN preprint, April 2026.
+              </p>
+                          </article>
 
-            <!-- Card 1 (navy via :nth-child(odd)): Follow / Published thinking -->
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Governance</span>
+                <span class="post-card__date">Mar 2026</span>
+              </div>
+              <h3 class="post-card__heading">Singapore's AI in Healthcare Guidelines 2.0 — who owns what?</h3>
+              <p class="post-card__excerpt">
+                Singapore's updated framework defines three distinct stakeholder groups
+                across the AI lifecycle: Developers, Deployers, and Users. Each carries
+                specific obligations.
+              </p>
+              <blockquote class="post-card__quote">
+                "Most deployment friction comes from exactly this: unclear ownership."
+              </blockquote>
+              <a href="insights.html#guidelines-2-0" class="post-card__link">
+                Read the piece
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Policy</span>
+                <span class="post-card__date">Feb 2026</span>
+              </div>
+              <h3 class="post-card__heading">Singapore's National AI Council — balancing governance with startup agility</h3>
+              <p class="post-card__excerpt">
+                Budget 2026 signalled Singapore's intent to formalise AI governance
+                at a national level. A look at what inclusive governance actually
+                requires from the ground up — including the role of RADII.
+              </p>
+              <a href="insights.html#national-ai-council" class="post-card__link">
+                Read the piece
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <article class="post-card">
+              <div class="post-card__meta">
+                <span class="post-card__tag">Radiology Practice</span>
+                <span class="post-card__date">Feb 2026</span>
+              </div>
+              <h3 class="post-card__heading">Radiology private practice — the power of scale, and what it demands</h3>
+              <p class="post-card__excerpt">
+                After 16 years in private radiology, three models emerge: restructured
+                hospitals, small independent centres, and large private groups.
+              </p>
+              <blockquote class="post-card__quote">
+                "The more we automate, the more crucial the driver in the seat becomes."
+              </blockquote>
+              <a href="insights.html#private-practice-scale" class="post-card__link">
+                Read the piece
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Side Project</span>
+                  <span class="project-card__tag">LLM</span>
+                  <span class="project-card__tag">Satire</span>
+                </div>
+                <span class="project-card__year">2026</span>
+              </div>
+              <h3 class="project-card__heading">Cannot Exclude&trade;</h3>
+              <p class="project-card__summary">
+                A satirical radiology hedging engine. Paste a normal report, pick an
+                intensity tier, watch clinical certainty become defensible uncertainty.
+                A weekend build mirroring how radiologists communicate — LLM proxy,
+                rate limiting, and bot protection on a serverless edge stack.
+              </p>
+              <a href="https://cannot-exclude.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                View project
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-card__meta">
+                <div class="project-card__tags">
+                  <span class="project-card__tag">Side Project</span>
+                  <span class="project-card__tag">Interactive</span>
+                  <span class="project-card__tag">Storytelling</span>
+                </div>
+                <span class="project-card__year">2026</span>
+              </div>
+              <h3 class="project-card__heading">Artemis II Interactive Guide</h3>
+              <p class="project-card__summary">
+                An interactive web guide teaching orbital mechanics through NASA's
+                Artemis II mission. Four chapters covering orbits, trans-lunar
+                injection, gravity assists, and reentry — a creative side project
+                demonstrating technical storytelling outside the medical domain.
+              </p>
+              <a href="https://echtrn.github.io/artemis-ii/" target="_blank" rel="noopener noreferrer" class="project-card__link">
+                View project
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </article>
+
             <article class="post-card post-card--follow">
               <div class="post-card__meta">
                 <span class="post-card__tag">LinkedIn</span>
@@ -786,147 +954,6 @@
               </a>
             </article>
 
-            <!-- Card 2 (white): Post - Governance -->
-            <article class="post-card">
-              <div class="post-card__meta">
-                <span class="post-card__tag">Governance</span>
-                <span class="post-card__date">Dec 2024</span>
-              </div>
-              <h3 class="post-card__heading">Singapore's AI in Healthcare Guidelines 2.0 - who owns what?</h3>
-              <p class="post-card__excerpt">
-                Singapore's updated framework defines three distinct stakeholder groups
-                across the AI lifecycle: Developers, Deployers, and Users. Each carries
-                specific obligations.
-              </p>
-              <blockquote class="post-card__quote">
-                "Most deployment friction comes from exactly this: unclear ownership."
-              </blockquote>
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="post-card__link">
-                Read on LinkedIn
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Card 3 (navy via :nth-child(odd)): Project - Throw Punches -->
-            <article class="project-card">
-              <div class="project-card__meta">
-                <div class="project-card__tags">
-                  <span class="project-card__tag">Position Paper</span>
-                  <span class="project-card__tag">AI Philosophy</span>
-                  <span class="project-card__tag">SSRN</span>
-                </div>
-                <span class="project-card__year">2026</span>
-              </div>
-              <h3 class="project-card__heading">Throw Punches</h3>
-              <p class="project-card__summary">
-                A position paper arguing that AI's real value is not information access but
-                interactive challenge - sparring with intellectually fluent systems that
-                were once a privilege of elite institutions. Introduces a K-shaped
-                divergence model and five philosophical techniques for using AI as a
-                deliberate-practice partner. SSRN preprint, April 2026.
-              </p>
-              <a href="https://ssrn.com/abstract=6606399" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                View project
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Card 4 (white): Post - Policy -->
-            <article class="post-card">
-              <div class="post-card__meta">
-                <span class="post-card__tag">Policy</span>
-                <span class="post-card__date">Feb 2025</span>
-              </div>
-              <h3 class="post-card__heading">Singapore's National AI Council - balancing governance with startup agility</h3>
-              <p class="post-card__excerpt">
-                Budget 2026 signalled Singapore's intent to formalise AI governance
-                at a national level. A look at what inclusive governance actually
-                requires from the ground up - including the role of RADII.
-              </p>
-              <a href="https://www.linkedin.com/posts/sengchoetham_budget-2026-singapore-to-set-up-national-activity-7431328538303311873-DR-t" target="_blank" rel="noopener noreferrer" class="post-card__link">
-                Read on LinkedIn
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Card 5 (navy via :nth-child(odd)): Project - Cannot Exclude -->
-            <article class="project-card">
-              <div class="project-card__meta">
-                <div class="project-card__tags">
-                  <span class="project-card__tag">Side Project</span>
-                  <span class="project-card__tag">LLM</span>
-                  <span class="project-card__tag">Satire</span>
-                </div>
-                <span class="project-card__year">2026</span>
-              </div>
-              <h3 class="project-card__heading">Cannot Exclude&trade;</h3>
-              <p class="project-card__summary">
-                A satirical radiology hedging engine. Paste a normal report, pick an
-                intensity tier, watch clinical certainty become defensible uncertainty.
-                A weekend build mirroring how radiologists communicate - LLM proxy,
-                rate limiting, and bot protection on a serverless edge stack.
-              </p>
-              <a href="https://cannot-exclude.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                View project
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Card 6 (white): Post - Private Practice -->
-            <article class="post-card">
-              <div class="post-card__meta">
-                <span class="post-card__tag">Radiology Practice</span>
-                <span class="post-card__date">Nov 2024</span>
-              </div>
-              <h3 class="post-card__heading">Radiology private practice - the power of scale, and what it demands</h3>
-              <p class="post-card__excerpt">
-                After 16 years in private radiology, three models emerge: restructured
-                hospitals, small independent centres, and large private groups.
-              </p>
-              <blockquote class="post-card__quote">
-                "The more we automate, the more crucial the driver in the seat becomes."
-              </blockquote>
-              <a href="https://www.linkedin.com/posts/sengchoetham_radiology-privatepractice-healthsystems-activity-7425781160007512064-PYXJ" target="_blank" rel="noopener noreferrer" class="post-card__link">
-                Read on LinkedIn
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
-            <!-- Card 7 (navy via :nth-child(odd)): Project - Artemis II -->
-            <article class="project-card">
-              <div class="project-card__meta">
-                <div class="project-card__tags">
-                  <span class="project-card__tag">Side Project</span>
-                  <span class="project-card__tag">Interactive</span>
-                  <span class="project-card__tag">Storytelling</span>
-                </div>
-                <span class="project-card__year">2026</span>
-              </div>
-              <h3 class="project-card__heading">Artemis II Interactive Guide</h3>
-              <p class="project-card__summary">
-                An interactive web guide teaching orbital mechanics through NASA's
-                Artemis II mission. Four chapters covering orbits, trans-lunar
-                injection, gravity assists, and reentry - a creative side project
-                demonstrating technical storytelling outside the medical domain.
-              </p>
-              <a href="https://echtrn.github.io/artemis-ii/" target="_blank" rel="noopener noreferrer" class="project-card__link">
-                View project
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </article>
-
         </div>
         </div>
       </div>
@@ -939,7 +966,7 @@
           <h2 class="partner-cta__heading">Working on something in healthcare AI?</h2>
           <p class="partner-cta__sub">
             If you are building for radiology or healthcare and need a clinical
-            partner who has been in the room - get in touch. Engagements are
+            partner who has been in the room — get in touch. Engagements are
             considered individually.
           </p>
         </div>
@@ -957,12 +984,22 @@
     <div class="container">
       <div class="footer__brand">
         <span class="footer__logo">Resonance 360</span>
-        <p class="footer__location">Mount Elizabeth Novena · Singapore</p>
+        <p class="footer__location">
+          Radiologic Clinic, Mount Elizabeth Novena Hospital<br />
+          38 Irrawaddy Road, Singapore 329563
+        </p>
+        <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Dr Tham Seng Choe on LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+          Follow on LinkedIn
+        </a>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="clinical.html">Clinical Services</a>
         <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="insights.html">Insights</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -990,11 +1027,11 @@
 
       function step() {
         // Scroll by visible width minus one card peek so the next card lands at the snap start
-        return Math.max(280, track.clientWidth - 80);
+        return Math.max(280, track.clientWidth — 80);
       }
       function update() {
         var atStart = track.scrollLeft <= 2;
-        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth — 2;
         prev.disabled = atStart;
         next.disabled = atEnd;
         wrap.setAttribute('data-at-start', atStart ? 'true' : 'false');

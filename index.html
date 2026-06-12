@@ -6,21 +6,30 @@
   <title>MSK Radiology Second Opinion Singapore | Resonance 360</title>
   <meta name="description" content="Expert MRI second opinions for sports injuries, spine, joints and pain interventions. Led by Dr Tham Seng Choe, Senior Consultant Radiologist, Mount Elizabeth Novena, Singapore." />
   <meta name="keywords" content="MRI second opinion Singapore, MSK radiology Singapore, sports injury MRI, radiology AI Singapore, pain intervention Singapore, musculoskeletal radiologist" />
-  <link rel="canonical" href="https://resonance360.com/" />
+  <link rel="canonical" href="https://www.resonance360.com/" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://resonance360.com/" />
+  <meta property="og:url" content="https://www.resonance360.com/" />
   <meta property="og:title" content="MSK Radiology Second Opinion Singapore | Resonance 360" />
   <meta property="og:description" content="Expert MRI second opinions for sports injuries, spine, joints and pain interventions. Dr Tham Seng Choe, Senior Consultant Radiologist, Singapore." />
-  <meta property="og:image" content="https://resonance360.com/assets/images/dr-tham.jpg" />
+  <meta property="og:image" content="https://www.resonance360.com/assets/images/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Resonance 360 — Precision Radiology. Intelligent Innovation." />
   <meta property="og:site_name" content="Resonance 360" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -29,12 +38,12 @@
   {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
-    "@id": "https://resonance360.com/#organization",
+    "@id": "https://www.resonance360.com/#organization",
     "name": "Resonance 360",
     "alternateName": "Resonance 360 — Dr Tham Seng Choe",
-    "url": "https://resonance360.com/",
-    "logo": "https://resonance360.com/assets/images/R360-logo.png",
-    "image": "https://resonance360.com/assets/images/dr-tham.jpg",
+    "url": "https://www.resonance360.com/",
+    "logo": "https://www.resonance360.com/assets/images/R360-logo-512.png",
+    "image": "https://www.resonance360.com/assets/images/dr-tham.jpg",
     "description": "Subspecialty MSK and interventional radiology second opinions, and clinical AI advisory, led by Dr Tham Seng Choe in Singapore.",
     "medicalSpecialty": ["Radiology", "DiagnosticRadiology", "MusculoskeletalImaging"],
     "areaServed": { "@type": "Country", "name": "Singapore" },
@@ -45,12 +54,14 @@
       "addressCountry": "SG"
     },
     "email": "hello@resonance360.com",
+    "sameAs": ["https://www.linkedin.com/in/sengchoetham/"],
     "founder": {
       "@type": "Physician",
-      "@id": "https://resonance360.com/about.html#person",
+      "@id": "https://www.resonance360.com/about.html#person",
       "name": "Dr Tham Seng Choe",
       "jobTitle": "Senior Consultant Radiologist",
-      "medicalSpecialty": ["Radiology", "MusculoskeletalImaging", "InterventionalRadiology"]
+      "medicalSpecialty": ["Radiology", "MusculoskeletalImaging", "InterventionalRadiology"],
+      "sameAs": ["https://www.linkedin.com/in/sengchoetham/"]
     }
   }
   </script>
@@ -58,11 +69,303 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "https://resonance360.com/",
+    "url": "https://www.resonance360.com/",
     "name": "Resonance 360",
-    "publisher": { "@id": "https://resonance360.com/#organization" }
+    "publisher": { "@id": "https://www.resonance360.com/#organization" }
   }
   </script>
+
+  <style>
+    /* ── Trust bar ───────────────────────────────────────── */
+    .trust {
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-100);
+      padding: var(--sp-10) 0;
+    }
+    .trust__label {
+      display: block;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey-400);
+      margin-bottom: var(--sp-6);
+    }
+    .trust__row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--sp-4) var(--sp-10);
+    }
+    .trust__item {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--grey-600);
+      white-space: nowrap;
+    }
+    .trust__item span {
+      color: var(--grey-400);
+      font-weight: 400;
+    }
+
+    /* ── Meet Dr Tham ────────────────────────────────────── */
+    .meet {
+      background: var(--navy);
+      padding: var(--sp-24) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .meet::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 100% 0%, rgba(13, 148, 136, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .meet__grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--sp-16);
+      align-items: center;
+      position: relative;
+    }
+    .meet__portrait-wrap {
+      position: relative;
+    }
+    .meet__portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: var(--r-lg);
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .meet__portrait-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(13, 148, 136, 0.5);
+      border-radius: var(--r-lg);
+      transform: translate(14px, 14px);
+    }
+    .meet__heading {
+      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      margin-bottom: var(--sp-5);
+    }
+    .meet__heading em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .meet__body {
+      font-size: 0.9875rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 580px;
+      margin-bottom: var(--sp-7);
+    }
+    .meet__creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2) var(--sp-5);
+      margin-bottom: var(--sp-8);
+    }
+    .meet__cred {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+    }
+    .meet__cred::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+    .meet__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--teal);
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+    .meet__link:hover { gap: var(--sp-3); color: #14B8A6; }
+
+    /* ── Recent writing ──────────────────────────────────── */
+    .home-writing {
+      background: var(--off-white);
+      padding: var(--sp-24) 0;
+    }
+    .home-writing__intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--sp-6);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-10);
+    }
+    .home-writing__heading {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+    }
+    .home-writing__all {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      padding-bottom: var(--sp-1);
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+    .home-writing__all:hover { gap: var(--sp-3); color: var(--teal-hover); }
+    .home-writing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-5);
+    }
+    .insight-card {
+      background: var(--white);
+      border: 1px solid var(--grey-200);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--r-lg);
+      padding: var(--sp-7);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--t-slow), box-shadow var(--t-slow);
+    }
+    .insight-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.07);
+    }
+    .insight-card__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--sp-4);
+    }
+    .insight-card__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .insight-card__date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--grey-400);
+    }
+    .insight-card__heading {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      line-height: 1.45;
+      margin-bottom: var(--sp-3);
+    }
+    .insight-card__excerpt {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: var(--sp-5);
+    }
+    .insight-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-top: auto;
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+    .insight-card__link:hover { gap: var(--sp-3); color: var(--teal-hover); }
+
+    /* ── Closing CTA band ────────────────────────────────── */
+    .home-cta {
+      background: var(--navy);
+      padding: var(--sp-24) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 90% at 50% 120%, rgba(13, 148, 136, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .home-cta .container {
+      position: relative;
+      text-align: center;
+    }
+    .home-cta__heading {
+      font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+      margin-bottom: var(--sp-4);
+    }
+    .home-cta__sub {
+      font-size: 0.9875rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 520px;
+      margin: 0 auto var(--sp-10);
+    }
+    .home-cta__actions {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .meet__grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-12);
+      }
+      .meet__portrait-wrap {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      .home-writing__grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .trust__row { gap: var(--sp-3) var(--sp-6); }
+      .meet { padding: var(--sp-16) 0; }
+      .home-writing { padding: var(--sp-16) 0; }
+      .home-cta { padding: var(--sp-16) 0; }
+      .home-cta__actions { flex-direction: column; }
+      .home-cta__actions .btn { justify-content: center; }
+    }
+  </style>
 </head>
 <body class="page-home">
 
@@ -85,139 +388,318 @@
         <li><a href="about.html"         class="nav__link">About</a></li>
         <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
         <li><a href="ai-innovation.html" class="nav__link">AI &amp; Innovation</a></li>
+        <li><a href="insights.html"      class="nav__link">Insights</a></li>
         <li><a href="faq.html"           class="nav__link">FAQ</a></li>
         <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ── Hero ───────────────────────────────────────────── -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero__bg" aria-hidden="true"></div>
+  <main>
 
-    <div class="container">
-      <div class="hero__content">
-        <span class="label hero__label">Singapore · Specialist Radiology</span>
+    <!-- ── Hero ───────────────────────────────────────────── -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__bg" aria-hidden="true"></div>
 
-        <h1 class="hero__heading">
-          <span class="hero__heading-line">Precision Radiology.</span>
-          <span class="hero__heading-line hero__heading-line--accent">Intelligent Innovation.</span>
-        </h1>
+      <!-- Resonance wave motif -->
+      <svg class="hero__wave" viewBox="0 0 1440 190" fill="none" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 95 Q 180 25, 360 95 T 720 95 T 1080 95 T 1440 95" stroke="rgba(13,148,136,0.22)" stroke-width="1.5"/>
+        <path d="M0 122 Q 180 58, 360 122 T 720 122 T 1080 122 T 1440 122" stroke="rgba(13,148,136,0.13)" stroke-width="1.5"/>
+        <path d="M0 149 Q 180 91, 360 149 T 720 149 T 1080 149 T 1440 149" stroke="rgba(13,148,136,0.07)" stroke-width="1.5"/>
+      </svg>
 
-        <p class="hero__mission">
-          Resonance 360 unites subspecialty MSK and interventional radiology with applied
-          artificial intelligence - delivering expert clinical insights and partnering with
-          the healthcare AI ecosystem to shape the future of radiology practice.
-        </p>
+      <div class="container">
+        <div class="hero__content">
+          <span class="label hero__label">Singapore · Specialist Radiology</span>
 
-        <div class="hero__ctas">
-          <a href="contact.html?type=clinical" class="btn btn--outline-white">
-            Request a Second Opinion
-          </a>
-          <a href="contact.html?type=partner" class="btn btn--teal">
-            Partner With Us
-          </a>
+          <h1 class="hero__heading">
+            <span class="hero__heading-line">Precision Radiology.</span>
+            <span class="hero__heading-line hero__heading-line--accent">Intelligent Innovation.</span>
+          </h1>
+
+          <p class="hero__mission">
+            Resonance 360 is the practice of Dr Tham Seng Choe — Senior Consultant
+            Radiologist with over 20 years in subspecialty MSK and interventional
+            radiology, and a decade applying that expertise to clinical AI. Expert
+            second opinions on one side; credible clinical partnership for the
+            healthcare AI ecosystem on the other.
+          </p>
+
+          <div class="hero__ctas">
+            <a href="contact.html?type=clinical" class="btn btn--outline-white">
+              Request a Second Opinion
+            </a>
+            <a href="contact.html?type=partner" class="btn btn--teal">
+              Partner With Us
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Scroll hint -->
-    <div class="hero__scroll" aria-hidden="true">
-      <span>Scroll</span>
-      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" aria-hidden="true">
-        <path d="M8 4v12M3 11l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ── Two Pillars ────────────────────────────────────── -->
-  <section class="pillars" aria-label="What we do">
-    <div class="container">
-
-      <div class="pillars__intro reveal">
-        <span class="label">What We Do</span>
-        <h2 class="pillars__heading">Two Disciplines. One Practice.</h2>
+      <!-- Scroll hint -->
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" aria-hidden="true">
+          <path d="M8 4v12M3 11l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
+    </section>
 
-      <div class="pillars__grid">
+    <!-- ── Trust bar ──────────────────────────────────────── -->
+    <section class="trust" aria-label="Affiliations and training">
+      <div class="container">
+        <span class="trust__label">Affiliations &amp; Training</span>
+        <div class="trust__row">
+          <span class="trust__item">Royal College of Radiologists <span>· FRCR (UK)</span></span>
+          <span class="trust__item">RADII <span>· Singapore Radiological Society</span></span>
+          <span class="trust__item">Parkway Radiology <span>· IHH Healthcare</span></span>
+          <span class="trust__item">UCSF <span>· MSK Quantitative Imaging</span></span>
+          <span class="trust__item">AMIA <span>· Clinical Informatics, OHSU</span></span>
+          <span class="trust__item">Amazon Web Services <span>· GenAI in Radiology</span></span>
+        </div>
+      </div>
+    </section>
 
-        <!-- Clinical Pillar -->
-        <article class="pillar pillar--clinical reveal reveal-delay-1">
-          <div class="pillar__icon" aria-hidden="true">
-            <!-- Crosshair / targeting icon - precision diagnostics -->
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="14" cy="14" r="3" fill="currentColor"/>
-              <line x1="14" y1="3" x2="14" y2="8"   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="14" y1="20" x2="14" y2="25"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="3"  y1="14" x2="8"  y2="14"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="20" y1="14" x2="25" y2="14"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+    <!-- ── Two Pillars ────────────────────────────────────── -->
+    <section class="pillars" aria-label="What we do">
+      <div class="container">
+
+        <div class="pillars__intro reveal">
+          <span class="label">What We Do</span>
+          <h2 class="pillars__heading">Two Disciplines. One Practice.</h2>
+        </div>
+
+        <div class="pillars__grid">
+
+          <!-- Clinical Pillar -->
+          <article class="pillar pillar--clinical reveal reveal-delay-1">
+            <div class="pillar__icon" aria-hidden="true">
+              <!-- Crosshair / targeting icon - precision diagnostics -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="14" cy="14" r="3" fill="currentColor"/>
+                <line x1="14" y1="3" x2="14" y2="8"   stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="14" y1="20" x2="14" y2="25"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="3"  y1="14" x2="8"  y2="14"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="20" y1="14" x2="25" y2="14"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <span class="pillar__label">Clinical Excellence</span>
+            <h3 class="pillar__heading">MSK Radiology &amp; Interventions</h3>
+            <p class="pillar__body">
+              Expert second opinions on complex musculoskeletal imaging — spine, joints, and soft
+              tissue. Image-guided interventions including joint injections, nerve blocks, and
+              spine procedures. Open to clinician referrals and patient-direct enquiries.
+            </p>
+            <a href="clinical.html" class="pillar__link" aria-label="Explore Clinical Services">
+              Explore Clinical Services
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- AI Pillar -->
+          <article class="pillar pillar--ai reveal reveal-delay-2">
+            <div class="pillar__icon" aria-hidden="true">
+              <!-- Neural network icon - AI / connectivity -->
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="3.5"  fill="currentColor"/>
+                <circle cx="5"  cy="6"  r="2.5"  stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="23" cy="6"  r="2.5"  stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="5"  cy="22" r="2.5"  stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="23" cy="22" r="2.5"  stroke="currentColor" stroke-width="1.4"/>
+                <line x1="7"  y1="7.5"  x2="11.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
+                <line x1="21" y1="7.5"  x2="16.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
+                <line x1="7"  y1="20.5" x2="11.5" y2="15.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
+                <line x1="21" y1="20.5" x2="16.5" y2="15.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
+              </svg>
+            </div>
+
+            <span class="pillar__label pillar__label--mono">AI &amp; Innovation</span>
+            <h3 class="pillar__heading pillar__heading--mono">Clinical AI Partnership</h3>
+            <p class="pillar__body">
+              Bridging healthcare systems with AI companies. Workflow redesign, AI advisory,
+              and medical report optimisation — grounded in real clinical practice and
+              subspecialty expertise in radiology.
+            </p>
+            <a href="ai-innovation.html" class="pillar__link pillar__link--teal" aria-label="Explore AI and Innovation">
+              Explore AI &amp; Innovation
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Meet Dr Tham ───────────────────────────────────── -->
+    <section class="meet" aria-label="About Dr Tham Seng Choe">
+      <div class="container">
+        <div class="meet__grid">
+
+          <div class="meet__portrait-wrap reveal">
+            <img
+              src="assets/images/dr-tham.jpg"
+              alt="Dr Tham Seng Choe, Senior Consultant Radiologist"
+              class="meet__portrait"
+              loading="lazy"
+            />
           </div>
 
-          <span class="pillar__label">Clinical Excellence</span>
-          <h3 class="pillar__heading">MSK Radiology &amp; Interventions</h3>
-          <p class="pillar__body">
-            Expert second opinions on complex musculoskeletal imaging - spine, joints, and soft
-            tissue. Image-guided interventions including joint injections, nerve blocks, and
-            spine procedures. Referral-based, clinician-to-clinician.
-          </p>
-          <a href="clinical.html" class="pillar__link" aria-label="Explore Clinical Services">
-            Explore Clinical Services
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <div class="reveal reveal-delay-1">
+            <span class="label">The Specialist</span>
+            <h2 class="meet__heading">Every opinion carries <em>a name.</em></h2>
+            <p class="meet__body">
+              Dr Tham Seng Choe is a Senior Consultant Radiologist and Clinical
+              Director at Parkway Radiology, IHH Healthcare. He holds a Fellowship from the Royal
+              College of Radiologists (UK), with subspecialty training in
+              musculoskeletal imaging at UCSF and clinical informatics through the
+              AMIA programme at OHSU. Every second opinion is read by him.
+              Every advisory engagement gets his judgment — not a team's.
+            </p>
+            <div class="meet__creds">
+              <span class="meet__cred">MBBS (NUS)</span>
+              <span class="meet__cred">FRCR (UK)</span>
+              <span class="meet__cred">UCSF Visiting Specialist</span>
+              <span class="meet__cred">AMIA Clinical Informatics</span>
+              <span class="meet__cred">Founding ExCo, RADII</span>
+              <span class="meet__cred">20+ Years Practice</span>
+            </div>
+            <a href="about.html" class="meet__link">
+              More about Dr Tham
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Recent writing ─────────────────────────────────── -->
+    <section class="home-writing" aria-label="Recent writing">
+      <div class="container">
+
+        <div class="home-writing__intro reveal">
+          <div>
+            <span class="label">Insights</span>
+            <h2 class="home-writing__heading">Recent thinking.</h2>
+          </div>
+          <a href="insights.html" class="home-writing__all">
+            All writing
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-        </article>
+        </div>
 
-        <!-- AI Pillar -->
-        <article class="pillar pillar--ai reveal reveal-delay-2">
-          <div class="pillar__icon" aria-hidden="true">
-            <!-- Neural network icon - AI / connectivity -->
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="3.5"  fill="currentColor"/>
-              <circle cx="5"  cy="6"  r="2.5"  stroke="currentColor" stroke-width="1.4"/>
-              <circle cx="23" cy="6"  r="2.5"  stroke="currentColor" stroke-width="1.4"/>
-              <circle cx="5"  cy="22" r="2.5"  stroke="currentColor" stroke-width="1.4"/>
-              <circle cx="23" cy="22" r="2.5"  stroke="currentColor" stroke-width="1.4"/>
-              <line x1="7"  y1="7.5"  x2="11.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
-              <line x1="21" y1="7.5"  x2="16.5" y2="12.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
-              <line x1="7"  y1="20.5" x2="11.5" y2="15.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
-              <line x1="21" y1="20.5" x2="16.5" y2="15.5" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2.5 2"/>
-            </svg>
-          </div>
+        <div class="home-writing__grid">
+          <article class="insight-card reveal reveal-delay-1">
+            <div class="insight-card__meta">
+              <span class="insight-card__tag">Governance</span>
+              <span class="insight-card__date">Mar 2026</span>
+            </div>
+            <h3 class="insight-card__heading">Singapore's AI in Healthcare Guidelines 2.0 — who owns what?</h3>
+            <p class="insight-card__excerpt">
+              The updated framework defines three stakeholder groups across the AI
+              lifecycle — and most deployment friction comes from exactly this:
+              unclear ownership.
+            </p>
+            <a href="insights.html#guidelines-2-0" class="insight-card__link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
 
-          <span class="pillar__label pillar__label--mono">AI &amp; Innovation</span>
-          <h3 class="pillar__heading pillar__heading--mono">Clinical AI Partnership</h3>
-          <p class="pillar__body">
-            Bridging healthcare systems with AI companies. Workflow redesign, AI advisory,
-            and medical report optimisation - grounded in real clinical practice and
-            subspecialty expertise in radiology.
-          </p>
-          <a href="ai-innovation.html" class="pillar__link pillar__link--teal" aria-label="Explore AI and Innovation">
-            Explore AI &amp; Innovation
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </article>
+          <article class="insight-card reveal reveal-delay-2">
+            <div class="insight-card__meta">
+              <span class="insight-card__tag">Policy</span>
+              <span class="insight-card__date">Feb 2026</span>
+            </div>
+            <h3 class="insight-card__heading">Singapore's National AI Council — governance with startup agility</h3>
+            <p class="insight-card__excerpt">
+              Budget 2026 signalled Singapore's intent to formalise AI governance at a
+              national level. What inclusive governance actually requires from the
+              ground up.
+            </p>
+            <a href="insights.html#national-ai-council" class="insight-card__link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="insight-card reveal reveal-delay-3">
+            <div class="insight-card__meta">
+              <span class="insight-card__tag">Radiology Practice</span>
+              <span class="insight-card__date">Feb 2026</span>
+            </div>
+            <h3 class="insight-card__heading">Radiology private practice — the power of scale, and what it demands</h3>
+            <p class="insight-card__excerpt">
+              After 16 years in private radiology, three models emerge. The more we
+              automate, the more crucial the driver in the seat becomes.
+            </p>
+            <a href="insights.html#private-practice-scale" class="insight-card__link">
+              Read
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+        </div>
 
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ── Closing CTA ────────────────────────────────────── -->
+    <section class="home-cta" aria-label="Get in touch">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="home-cta__heading">Start with a conversation.</h2>
+          <p class="home-cta__sub">
+            A complex scan that needs a specialist read — or an AI product that
+            needs clinical grounding. Both start the same way.
+          </p>
+          <div class="home-cta__actions">
+            <a href="contact.html?type=clinical" class="btn btn--outline-white">Request a Second Opinion</a>
+            <a href="contact.html?type=partner" class="btn btn--teal">Partner With Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ── Footer ─────────────────────────────────────────── -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__brand">
         <span class="footer__logo">Resonance 360</span>
-        <p class="footer__location">Mount Elizabeth Novena · Singapore</p>
+        <p class="footer__location">
+          Radiologic Clinic, Mount Elizabeth Novena Hospital<br />
+          38 Irrawaddy Road, Singapore 329563
+        </p>
+        <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Dr Tham Seng Choe on LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+          Follow on LinkedIn
+        </a>
       </div>
 
       <nav class="footer__nav" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="clinical.html">Clinical Services</a>
         <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="insights.html">Insights</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>

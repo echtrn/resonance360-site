@@ -25,6 +25,7 @@
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
 
   /* Layout */
   --container-max:     1160px;
@@ -89,6 +90,12 @@ ul  { list-style: none; }
   margin: 0 auto;
   padding: 0 var(--container-pad);
   width: 100%;
+}
+
+/* ── Display headings (editorial serif) ──────────────────── */
+h1, h2 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
 }
 
 /* ── Section labels (mono, teal) ─────────────────────────── */
@@ -182,6 +189,8 @@ ul  { list-style: none; }
 .page-about   .nav,
 .page-clinical .nav,
 .page-ai       .nav,
+.page-faq      .nav,
+.page-insights .nav,
 .page-contact  .nav { background: var(--navy); }
 
 /* Scrolled state */
@@ -321,6 +330,17 @@ ul  { list-style: none; }
   -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 50%, black 30%, transparent 100%);
 }
 
+/* Resonance wave motif — signature visual, anchored to the lower edge */
+.hero__wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
 .hero .container {
   position: relative;
   z-index: 1;
@@ -341,7 +361,7 @@ ul  { list-style: none; }
   font-size: clamp(2.4rem, 6vw, 4.25rem);
   font-weight: 600;
   line-height: 1.08;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.015em;
   color: var(--white);
   margin-bottom: var(--sp-8);
   opacity: 0;
@@ -353,7 +373,7 @@ ul  { list-style: none; }
 .hero__mission {
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
   max-width: 600px;
   margin-bottom: var(--sp-10);
   opacity: 0;
@@ -505,14 +525,14 @@ ul  { list-style: none; }
   font-size: clamp(2rem, 5vw, 3.25rem);
   font-weight: 600;
   color: var(--white);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
   margin-bottom: var(--sp-6);
 }
 .page-hero__sub {
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.72);
   max-width: 560px;
 }
 
@@ -588,10 +608,23 @@ ul  { list-style: none; }
 }
 .footer__location {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.55);
   font-family: var(--font-mono);
   letter-spacing: 0.04em;
+  line-height: 1.7;
 }
+.footer__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  transition: color var(--t-fast);
+}
+.footer__linkedin:hover { color: var(--teal); }
+.footer__linkedin svg { flex-shrink: 0; }
 
 .footer__nav {
   display: flex;
@@ -601,7 +634,7 @@ ul  { list-style: none; }
 }
 .footer__nav a {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.62);
   transition: color var(--t-fast);
 }
 .footer__nav a:hover { color: var(--white); }
@@ -614,7 +647,7 @@ ul  { list-style: none; }
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: var(--sp-2);
 }
 .footer__contact-email {
@@ -634,12 +667,12 @@ ul  { list-style: none; }
 }
 .footer__copy {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.42);
 }
 .footer__tagline {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.38);
   letter-spacing: 0.06em;
 }
 

@@ -6,19 +6,25 @@
   <title>Dr Tham Seng Choe — Senior Consultant Radiologist Singapore | MSK & Interventional</title>
   <meta name="description" content="Dr Tham Seng Choe, MBBS FRCR. Senior Consultant Radiologist with 20+ years subspecialty MSK and interventional radiology experience. Mount Elizabeth Novena, Singapore." />
   <meta name="keywords" content="Dr Tham Seng Choe, MSK radiologist Singapore, interventional radiologist Singapore, FRCR radiologist, musculoskeletal MRI Singapore" />
-  <link rel="canonical" href="https://resonance360.com/about.html" />
+  <link rel="canonical" href="https://www.resonance360.com/about.html" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://resonance360.com/about.html" />
+  <meta property="og:url" content="https://www.resonance360.com/about.html" />
   <meta property="og:title" content="Dr Tham Seng Choe — Senior Consultant Radiologist, Singapore" />
   <meta property="og:description" content="20+ years subspecialty MSK and interventional radiology. Founding Executive Committee member, RADII (Singapore Radiological Society)." />
-  <meta property="og:image" content="https://resonance360.com/assets/images/dr-tham.jpg" />
+  <meta property="og:image" content="https://www.resonance360.com/assets/images/dr-tham.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Structured data -->
@@ -26,12 +32,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Physician",
-    "@id": "https://resonance360.com/about.html#person",
+    "@id": "https://www.resonance360.com/about.html#person",
     "name": "Dr Tham Seng Choe",
     "honorificPrefix": "Dr",
     "jobTitle": "Senior Consultant Radiologist & Clinical Director",
-    "image": "https://resonance360.com/assets/images/dr-tham.jpg",
-    "url": "https://resonance360.com/about.html",
+    "image": "https://www.resonance360.com/assets/images/dr-tham.jpg",
+    "url": "https://www.resonance360.com/about.html",
     "worksFor": {
       "@type": "MedicalOrganization",
       "name": "Parkway Radiology"
@@ -52,6 +58,7 @@
     ],
     "medicalSpecialty": ["Radiology", "MusculoskeletalImaging", "InterventionalRadiology"],
     "knowsLanguage": ["English", "Mandarin", "Cantonese"],
+    "sameAs": ["https://www.linkedin.com/in/sengchoetham/"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Mount Elizabeth Novena",
@@ -65,8 +72,8 @@
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://resonance360.com/" },
-      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://resonance360.com/about.html" }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.resonance360.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.resonance360.com/about.html" }
     ]
   }
   </script>
@@ -184,50 +191,156 @@
       flex-shrink: 0;
     }
 
-    /* Philosophy section */
-    .philosophy {
-      padding: var(--sp-20) 0;
+    /* Journey timeline */
+    .journey {
+      padding: var(--sp-24) 0;
       background: var(--navy);
     }
-    .philosophy__intro {
-      text-align: center;
-      margin-bottom: var(--sp-16);
+    .journey__intro {
+      margin-bottom: var(--sp-14);
     }
-    .philosophy__heading {
+    .journey__heading {
       font-size: clamp(1.6rem, 3vw, 2.25rem);
       font-weight: 600;
       color: var(--white);
-      letter-spacing: -0.025em;
+      letter-spacing: -0.015em;
       line-height: 1.2;
     }
-    .philosophy__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--sp-6);
+    .journey__list {
+      list-style: none;
+      position: relative;
+      max-width: 720px;
+      padding-left: var(--sp-8);
     }
-    .philosophy__card {
-      padding: var(--sp-8);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--r-lg);
-      background: rgba(255, 255, 255, 0.03);
-      transition: background var(--t-base), border-color var(--t-base);
+    .journey__list::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(13, 148, 136, 0.7), rgba(13, 148, 136, 0.12));
     }
-    .philosophy__card:hover {
-      background: rgba(255, 255, 255, 0.055);
-      border-color: rgba(13, 148, 136, 0.3);
+    .journey__item {
+      position: relative;
+      padding-bottom: var(--sp-10);
     }
-    .philosophy__value {
-      font-size: 1.25rem;
-      font-weight: 600;
+    .journey__item:last-child { padding-bottom: 0; }
+    .journey__item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--sp-8) + 1px);
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.18);
+    }
+    .journey__phase {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--teal);
+      margin-bottom: var(--sp-2);
+    }
+    .journey__title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
       letter-spacing: -0.01em;
-      margin-bottom: var(--sp-3);
+      margin-bottom: var(--sp-2);
     }
-    .philosophy__desc {
+    .journey__desc {
       font-size: 0.9rem;
-      line-height: 1.75;
-      color: rgba(255, 255, 255, 0.52);
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.68);
+      max-width: 600px;
     }
+
+    /* Publications & speaking */
+    .pubs {
+      padding: var(--sp-24) 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .pubs__intro { margin-bottom: var(--sp-12); }
+    .pubs__heading {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+    }
+    .pubs__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+    .pubs__col-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--sp-5);
+      padding-bottom: var(--sp-3);
+      border-bottom: 1px solid var(--grey-200);
+    }
+    .pubs__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+    .pubs__list li {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-3);
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+    .pubs__list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      position: relative;
+      top: -3px;
+    }
+    .pubs__list em { font-style: italic; }
+    .pubs__list a {
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(13, 148, 136, 0.35);
+      transition: color var(--t-fast), border-color var(--t-fast);
+    }
+    .pubs__list a:hover { color: var(--teal-hover); border-color: var(--teal); }
+    .pubs__body {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: var(--sp-6);
+    }
+    .pubs__links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .pubs__links a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--teal);
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+    .pubs__links a:hover { gap: var(--sp-3); color: var(--teal-hover); }
 
     /* R360 section */
     .about-r360 {
@@ -321,9 +434,11 @@
     @media (max-width: 768px) {
       .bio { padding: var(--sp-16) 0; }
 
-      .philosophy__grid {
+      .journey { padding: var(--sp-16) 0; }
+      .pubs { padding: var(--sp-16) 0; }
+      .pubs__grid {
         grid-template-columns: 1fr;
-        gap: var(--sp-4);
+        gap: var(--sp-10);
       }
 
       .about-r360 { padding: var(--sp-16) 0; }
@@ -349,6 +464,7 @@
         <li><a href="about.html"         class="nav__link active">About</a></li>
         <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
         <li><a href="ai-innovation.html" class="nav__link">AI &amp; Innovation</a></li>
+        <li><a href="insights.html"      class="nav__link">Insights</a></li>
         <li><a href="faq.html"           class="nav__link">FAQ</a></li>
         <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
       </ul>
@@ -360,7 +476,7 @@
     <div class="container">
       <span class="label">About</span>
       <h1 class="page-hero__heading">Dr Tham Seng Choe</h1>
-      <p class="page-hero__sub">Senior Consultant Radiologist &amp; Clinical Director - MSK and Interventional Radiology, Singapore.</p>
+      <p class="page-hero__sub">Senior Consultant Radiologist &amp; Clinical Director — MSK and Interventional Radiology, Singapore.</p>
     </div>
   </header>
 
@@ -415,7 +531,7 @@
               <h2 class="bio__section-heading">Clinical Expertise</h2>
               <p>
                 Dr Tham's subspecialty training spans advanced MRI and CT interpretation
-                of the spine, joints, and soft tissue - including cartilage assessment,
+                of the spine, joints, and soft tissue — including cartilage assessment,
                 MRI kinematics, and quantitative imaging techniques developed during his
                 time at the Musculoskeletal Quantitative Imaging Research Center,
                 University of California, San Francisco. He performs the full range of
@@ -425,7 +541,7 @@
               <p>
                 His earlier rotations in orthopaedic and hand surgery give him a
                 proceduralist's understanding of what referring clinicians actually need
-                from a specialist radiological opinion - not just a read, but a clinically
+                from a specialist radiological opinion — not just a read, but a clinically
                 actionable one.
               </p>
               <p>
@@ -441,7 +557,7 @@
             <div class="bio__section reveal reveal-delay-3">
               <h2 class="bio__section-heading">AI &amp; Innovation</h2>
               <p>
-                Dr Tham is a founding Executive Committee member of RADII - the
+                Dr Tham is a founding Executive Committee member of RADII — the
                 Radiology Artificial Intelligence, Deep Learning, and Imaging Informatics
                 subcommittee of the Singapore Radiological Society. He has worked with
                 technology partners including Amazon Web Services on generative AI
@@ -462,37 +578,105 @@
       </div>
     </section>
 
-    <!-- ── Philosophy ─────────────────────────────────────── -->
-    <section class="philosophy" aria-label="Philosophy">
+    <!-- ── Career timeline ────────────────────────────────── -->
+    <section class="journey" aria-label="Career milestones">
       <div class="container">
-        <div class="philosophy__intro reveal">
-          <span class="label">Philosophy</span>
-          <h2 class="philosophy__heading">How he approaches the work.</h2>
+        <div class="journey__intro reveal">
+          <span class="label">The Path</span>
+          <h2 class="journey__heading">Two decades of depth.<br />One consistent direction.</h2>
         </div>
-        <div class="philosophy__grid">
-          <div class="philosophy__card reveal reveal-delay-1">
-            <p class="philosophy__value">Precision</p>
-            <p class="philosophy__desc">
-              Every opinion, every procedure, grounded in subspecialty depth
-              and years in the room. Precision is not caution - it is
-              commitment to getting it right.
+        <ol class="journey__list">
+          <li class="journey__item reveal">
+            <p class="journey__phase">Foundations</p>
+            <h3 class="journey__title">Medicine &amp; radiology training</h3>
+            <p class="journey__desc">
+              MBBS at the National University of Singapore, then Fellowship of the
+              Royal College of Radiologists (FRCR, UK) — with early rotations in
+              orthopaedic and hand surgery that still shape how his reports speak
+              to surgeons.
             </p>
+          </li>
+          <li class="journey__item reveal reveal-delay-1">
+            <p class="journey__phase">Subspecialty Depth</p>
+            <h3 class="journey__title">Visiting Specialist, UCSF</h3>
+            <p class="journey__desc">
+              Advanced MSK imaging at the Musculoskeletal Quantitative Imaging
+              Research Center, University of California, San Francisco — cartilage
+              assessment, MRI kinematics, and quantitative imaging techniques.
+            </p>
+          </li>
+          <li class="journey__item reveal reveal-delay-1">
+            <p class="journey__phase">Practice &amp; Leadership</p>
+            <h3 class="journey__title">Clinical Director, Parkway Radiology</h3>
+            <p class="journey__desc">
+              Over 16 years in private practice, leading to the Clinical Director
+              role at Parkway Radiology — part of IHH Healthcare, one of Asia's
+              largest integrated healthcare groups.
+            </p>
+          </li>
+          <li class="journey__item reveal reveal-delay-2">
+            <p class="journey__phase">Informatics</p>
+            <h3 class="journey__title">AMIA Clinical Informatics, OHSU</h3>
+            <p class="journey__desc">
+              Formal clinical informatics training through the AMIA programme at
+              Oregon Health &amp; Science University — the systems side of medicine,
+              studied properly.
+            </p>
+          </li>
+          <li class="journey__item reveal reveal-delay-2">
+            <p class="journey__phase">AI Leadership</p>
+            <h3 class="journey__title">Founding ExCo, RADII</h3>
+            <p class="journey__desc">
+              Founding Executive Committee member of RADII — the radiology AI,
+              deep learning, and imaging informatics subcommittee of the Singapore
+              Radiological Society. Generative-AI collaborations with technology
+              partners including AWS, and active writing on governance and
+              real-world deployment.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── Publications & speaking ────────────────────────── -->
+    <section class="pubs" aria-label="Publications and speaking">
+      <div class="container">
+        <div class="pubs__intro reveal">
+          <span class="label">Scholarship</span>
+          <h2 class="pubs__heading">Publications &amp; speaking.</h2>
+        </div>
+        <div class="pubs__grid">
+          <div class="reveal reveal-delay-1">
+            <p class="pubs__col-label">In Print</p>
+            <ul class="pubs__list">
+              <li>Peer-reviewed research in <em>Skeletal Radiology</em> and <em>Arthroscopy</em></li>
+              <li>Textbook contributions in musculoskeletal imaging, published by Thieme</li>
+              <li>Journal reviewer for <em>Skeletal Radiology</em></li>
+              <li><a href="https://ssrn.com/abstract=6606399" target="_blank" rel="noopener noreferrer">"Throw Punches" — position paper on AI as a deliberate-practice partner (SSRN preprint, 2026)</a></li>
+            </ul>
           </div>
-          <div class="philosophy__card reveal reveal-delay-2">
-            <p class="philosophy__value">Bridging</p>
-            <p class="philosophy__desc">
-              Connecting clinical expertise with the AI ecosystem. Translating
-              what the technology needs to understand about healthcare, and
-              what healthcare needs to understand about the technology.
+          <div class="reveal reveal-delay-2">
+            <p class="pubs__col-label">On Stage &amp; Online</p>
+            <p class="pubs__body">
+              Dr Tham is available for speaking engagements and panel participation
+              across radiology AI — governance, deployment, and the changing shape
+              of practice. His ongoing writing appears on LinkedIn and is collected
+              on the Insights page.
             </p>
-          </div>
-          <div class="philosophy__card reveal reveal-delay-3">
-            <p class="philosophy__value">Innovation</p>
-            <p class="philosophy__desc">
-              Applied, not theoretical. Shaped by real practice, real
-              workflows, and real patients. Innovation that cannot survive
-              clinical contact is not innovation worth pursuing.
-            </p>
+            <div class="pubs__links">
+              <a href="insights.html">
+                Read the writing
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer">
+                Follow on LinkedIn
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -508,14 +692,14 @@
             <h2 class="about-r360__heading">The broader canvas.</h2>
             <p>
               Resonance 360 is the name Dr Tham gives to his collected professional
-              effort - a loose framework that holds his clinical work, his AI interests,
+              effort — a loose framework that holds his clinical work, his AI interests,
               and the ideas that move between both. It is where his specialist reads
               sit alongside his advisory conversations, his published thinking, and
               his ongoing engagement with the technology reshaping radiology practice.
             </p>
             <p>
               His primary clinical role is as Clinical Director at Parkway Radiology,
-              part of IHH Healthcare - one of Asia's largest integrated healthcare
+              part of IHH Healthcare — one of Asia's largest integrated healthcare
               groups. Resonance 360 is the broader canvas: the projects, the
               partnerships, and the thinking that extend beyond any single
               institutional role.
@@ -537,7 +721,7 @@
             </div>
             <div class="stat-card">
               <div class="stat-card__num">2</div>
-              <div class="stat-card__label">Disciplines - clinical expertise and applied AI - held in one practice</div>
+              <div class="stat-card__label">Disciplines — clinical expertise and applied AI — held in one practice</div>
             </div>
             <div class="stat-card">
               <div class="stat-card__num">1<span>st</span></div>
@@ -556,12 +740,22 @@
     <div class="container">
       <div class="footer__brand">
         <span class="footer__logo">Resonance 360</span>
-        <p class="footer__location">Mount Elizabeth Novena · Singapore</p>
+        <p class="footer__location">
+          Radiologic Clinic, Mount Elizabeth Novena Hospital<br />
+          38 Irrawaddy Road, Singapore 329563
+        </p>
+        <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Dr Tham Seng Choe on LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+          Follow on LinkedIn
+        </a>
       </div>
       <nav class="footer__nav" aria-label="Footer navigation">
         <a href="about.html">About</a>
         <a href="clinical.html">Clinical Services</a>
         <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="insights.html">Insights</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </nav>

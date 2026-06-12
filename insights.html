@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights — Writing on Radiology AI, Governance &amp; Practice | Resonance 360</title>
+  <meta name="description" content="Writing by Dr Tham Seng Choe on AI in healthcare, radiology governance, private practice, and the evolving role of the subspecialist. Singapore." />
+  <meta name="keywords" content="radiology AI writing, healthcare AI governance Singapore, radiology thought leadership, AI in medicine, Dr Tham Seng Choe" />
+  <link rel="canonical" href="https://www.resonance360.com/insights.html" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.resonance360.com/insights.html" />
+  <meta property="og:title" content="Insights — Writing on Radiology AI, Governance &amp; Practice" />
+  <meta property="og:description" content="Writing by Dr Tham Seng Choe on AI in healthcare, radiology governance, and the evolving role of the subspecialist." />
+  <meta property="og:image" content="https://www.resonance360.com/assets/images/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Resonance 360 — Precision Radiology. Intelligent Innovation." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "url": "https://www.resonance360.com/insights.html",
+    "name": "Insights — Writing by Dr Tham Seng Choe",
+    "about": { "@id": "https://www.resonance360.com/about.html#person" },
+    "hasPart": [
+      {
+        "@type": "ScholarlyArticle",
+        "headline": "Throw Punches",
+        "author": { "@id": "https://www.resonance360.com/about.html#person" },
+        "datePublished": "2026-04",
+        "url": "https://ssrn.com/abstract=6606399"
+      },
+      {
+        "@type": "Article",
+        "headline": "Singapore's AI in Healthcare Guidelines 2.0 — who owns what?",
+        "author": { "@id": "https://www.resonance360.com/about.html#person" },
+        "datePublished": "2026-03",
+        "url": "https://www.resonance360.com/insights.html#guidelines-2-0"
+      },
+      {
+        "@type": "Article",
+        "headline": "Singapore's National AI Council — balancing governance with startup agility",
+        "author": { "@id": "https://www.resonance360.com/about.html#person" },
+        "datePublished": "2026-02",
+        "url": "https://www.resonance360.com/insights.html#national-ai-council"
+      },
+      {
+        "@type": "Article",
+        "headline": "Radiology private practice — the power of scale, and what it demands",
+        "author": { "@id": "https://www.resonance360.com/about.html#person" },
+        "datePublished": "2026-02",
+        "url": "https://www.resonance360.com/insights.html#private-practice-scale"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.resonance360.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://www.resonance360.com/insights.html" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Insights list ──────────────────────────────────── */
+    .insights-main {
+      padding: var(--sp-20) 0 var(--sp-24);
+      background: var(--white);
+    }
+    .insights-main .container { max-width: 920px; }
+
+    .insight {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: var(--sp-10);
+      padding: var(--sp-14) 0;
+      border-bottom: 1px solid var(--grey-200);
+      scroll-margin-top: calc(var(--nav-height) + var(--sp-6));
+    }
+    .insight:first-child { padding-top: var(--sp-4); }
+    .insight:last-of-type { border-bottom: none; }
+
+    .insight__meta {}
+    .insight__tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-dim);
+      border: 1px solid rgba(13, 148, 136, 0.2);
+      padding: var(--sp-1) var(--sp-3);
+      border-radius: 100px;
+      margin-bottom: var(--sp-3);
+    }
+    .insight__date {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--grey-400);
+      letter-spacing: 0.06em;
+    }
+    .insight__venue {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: var(--grey-400);
+      letter-spacing: 0.06em;
+      margin-top: var(--sp-2);
+    }
+
+    .insight__heading {
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      margin-bottom: var(--sp-5);
+    }
+    .insight__body p {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: var(--sp-4);
+    }
+    .insight__quote {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--navy);
+      border-left: 2px solid var(--teal);
+      padding-left: var(--sp-5);
+      margin: var(--sp-6) 0;
+    }
+    .insight__link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-top: var(--sp-2);
+      transition: gap var(--t-fast), color var(--t-fast);
+    }
+    .insight__link:hover { gap: var(--sp-3); color: var(--teal-hover); }
+
+    /* Featured (SSRN paper) */
+    .insight--featured {
+      display: block;
+      background: var(--navy);
+      border: none;
+      border-top: 3px solid var(--teal);
+      border-radius: var(--r-lg);
+      padding: var(--sp-10) var(--sp-10) var(--sp-12);
+      margin-bottom: var(--sp-6);
+    }
+    .insight--featured .insight__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-6);
+    }
+    .insight--featured .insight__tag {
+      background: rgba(13, 148, 136, 0.18);
+      border-color: rgba(13, 148, 136, 0.3);
+      margin-bottom: 0;
+    }
+    .insight--featured .insight__date,
+    .insight--featured .insight__venue {
+      display: inline;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .insight--featured .insight__heading { color: var(--white); }
+    .insight--featured .insight__body p { color: rgba(255, 255, 255, 0.72); }
+    .insight--featured .insight__quote {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ── Follow band ────────────────────────────────────── */
+    .insights-follow {
+      background: var(--navy);
+      padding: var(--sp-20) 0;
+    }
+    .insights-follow .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-10);
+    }
+    .insights-follow__heading {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin-bottom: var(--sp-3);
+    }
+    .insights-follow__sub {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 480px;
+    }
+    .insights-follow__actions { flex-shrink: 0; }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .insight {
+        grid-template-columns: 1fr;
+        gap: var(--sp-4);
+        padding: var(--sp-10) 0;
+      }
+      .insight__meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--sp-3);
+      }
+      .insight__tag { margin-bottom: 0; }
+      .insight__date, .insight__venue { display: inline; margin: 0; }
+      .insight--featured { padding: var(--sp-8) var(--sp-6); }
+
+      .insights-follow .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .insights-follow__actions { width: 100%; }
+      .insights-follow__actions .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="page-insights">
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav__logo" aria-label="Resonance 360 home">
+        <span class="nav__logo-text">Resonance 360</span>
+        <span class="nav__logo-dot" aria-hidden="true"></span>
+      </a>
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="index.html"         class="nav__link">Home</a></li>
+        <li><a href="about.html"         class="nav__link">About</a></li>
+        <li><a href="clinical.html"      class="nav__link">Clinical Services</a></li>
+        <li><a href="ai-innovation.html" class="nav__link">AI &amp; Innovation</a></li>
+        <li><a href="insights.html"      class="nav__link active">Insights</a></li>
+        <li><a href="faq.html"           class="nav__link">FAQ</a></li>
+        <li><a href="contact.html"       class="nav__link nav__link--cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────────────── -->
+  <header class="page-hero">
+    <div class="container">
+      <span class="label">Insights</span>
+      <h1 class="page-hero__heading">Published thinking.</h1>
+      <p class="page-hero__sub">
+        Writing on AI in healthcare, radiology governance, private practice,
+        and the evolving role of the subspecialist — from someone who reads
+        scans in the morning and argues about deployment frameworks in the
+        afternoon.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="insights-main" aria-label="Writing">
+      <div class="container">
+
+        <!-- ── Featured: Throw Punches ──────────────────────── -->
+        <article class="insight insight--featured reveal" id="throw-punches">
+          <div class="insight__meta">
+            <span class="insight__tag">Position Paper</span>
+            <span class="insight__date">April 2026</span>
+            <span class="insight__venue">· SSRN Preprint</span>
+          </div>
+          <h2 class="insight__heading">Throw Punches</h2>
+          <div class="insight__body">
+            <p>
+              Most conversations about AI's value end at information access — faster
+              answers, broader retrieval, summarised everything. This position paper
+              argues that the real prize is something older and rarer: interactive
+              challenge. The kind of intellectual sparring that was once a privilege
+              of elite institutions is now available to anyone willing to be
+              contradicted by a fluent machine.
+            </p>
+            <p>
+              The paper introduces a K-shaped divergence model — those who use AI to
+              avoid thinking and those who use it to think harder are headed in
+              opposite directions — and sets out five philosophical techniques for
+              using AI as a deliberate-practice partner rather than an answer engine.
+            </p>
+          </div>
+          <a href="https://ssrn.com/abstract=6606399" target="_blank" rel="noopener noreferrer" class="insight__link">
+            Read the paper on SSRN
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </article>
+
+        <!-- ── Guidelines 2.0 ───────────────────────────────── -->
+        <article class="insight reveal" id="guidelines-2-0">
+          <div class="insight__meta">
+            <span class="insight__tag">Governance</span>
+            <span class="insight__date">March 2026</span>
+            <span class="insight__venue">Originally on LinkedIn</span>
+          </div>
+          <div>
+            <h2 class="insight__heading">Singapore's AI in Healthcare Guidelines 2.0 — who owns what?</h2>
+            <div class="insight__body">
+              <p>
+                Singapore's updated AI in Healthcare Guidelines draw a line many
+                frameworks blur: they define three distinct stakeholder groups across
+                the AI lifecycle — Developers, Deployers, and Users — and attach
+                specific obligations to each.
+              </p>
+              <p>
+                That distinction matters more than it sounds. When an AI tool
+                underperforms in a clinical setting, the first question is rarely
+                technical — it is "whose job was this?" A framework that forces
+                ownership to be named before deployment, not litigated after,
+                addresses the failure mode Dr Tham sees most often in practice.
+              </p>
+              <blockquote class="insight__quote">
+                "Most deployment friction comes from exactly this: unclear ownership."
+              </blockquote>
+            </div>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7437302214999699456/" target="_blank" rel="noopener noreferrer" class="insight__link">
+              Read the full piece on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── National AI Council ──────────────────────────── -->
+        <article class="insight reveal" id="national-ai-council">
+          <div class="insight__meta">
+            <span class="insight__tag">Policy</span>
+            <span class="insight__date">February 2026</span>
+            <span class="insight__venue">Originally on LinkedIn</span>
+          </div>
+          <div>
+            <h2 class="insight__heading">Singapore's National AI Council — balancing governance with startup agility</h2>
+            <div class="insight__body">
+              <p>
+                Budget 2026 signalled Singapore's intent to formalise AI governance
+                at a national level. The instinct is sound — but governance that is
+                designed top-down tends to discover its blind spots in production.
+              </p>
+              <p>
+                This piece looks at what inclusive governance actually requires from
+                the ground up: practitioner voices in the room where rules are made,
+                professional bodies like RADII translating between regulators and
+                the clinicians who live with the consequences, and enough room left
+                for the startups building the tools to keep moving.
+              </p>
+            </div>
+            <a href="https://www.linkedin.com/posts/sengchoetham_budget-2026-singapore-to-set-up-national-activity-7431328538303311873-DR-t" target="_blank" rel="noopener noreferrer" class="insight__link">
+              Read the full piece on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Private practice ─────────────────────────────── -->
+        <article class="insight reveal" id="private-practice-scale">
+          <div class="insight__meta">
+            <span class="insight__tag">Radiology Practice</span>
+            <span class="insight__date">February 2026</span>
+            <span class="insight__venue">Originally on LinkedIn</span>
+          </div>
+          <div>
+            <h2 class="insight__heading">Radiology private practice — the power of scale, and what it demands</h2>
+            <div class="insight__body">
+              <p>
+                After 16 years in private radiology, three models come into focus:
+                restructured hospitals, small independent centres, and large private
+                groups. Each trades something for scale — autonomy, reach, or
+                resilience — and each demands something different from the
+                radiologists inside it.
+              </p>
+              <p>
+                The thread that runs through all three: as automation takes over more
+                of the workflow, the judgment of the person in the seat becomes more
+                consequential, not less.
+              </p>
+              <blockquote class="insight__quote">
+                "The more we automate, the more crucial the driver in the seat becomes."
+              </blockquote>
+            </div>
+            <a href="https://www.linkedin.com/posts/sengchoetham_radiology-privatepractice-healthsystems-activity-7425781160007512064-PYXJ" target="_blank" rel="noopener noreferrer" class="insight__link">
+              Read the full piece on LinkedIn
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Follow band ────────────────────────────────────── -->
+    <section class="insights-follow" aria-label="Follow on LinkedIn">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="insights-follow__heading">The writing continues on LinkedIn.</h2>
+          <p class="insights-follow__sub">
+            New pieces on AI in healthcare, radiology governance, and the evolving
+            role of the subspecialist — published as the thinking happens.
+          </p>
+        </div>
+        <div class="insights-follow__actions reveal reveal-delay-2">
+          <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="btn btn--teal">
+            Follow Dr Tham on LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__brand">
+        <span class="footer__logo">Resonance 360</span>
+        <p class="footer__location">
+          Radiologic Clinic, Mount Elizabeth Novena Hospital<br />
+          38 Irrawaddy Road, Singapore 329563
+        </p>
+        <a href="https://www.linkedin.com/in/sengchoetham/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Dr Tham Seng Choe on LinkedIn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/>
+          </svg>
+          Follow on LinkedIn
+        </a>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="about.html">About</a>
+        <a href="clinical.html">Clinical Services</a>
+        <a href="ai-innovation.html">AI &amp; Innovation</a>
+        <a href="insights.html">Insights</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer__contact">
+        <p class="footer__contact-label">Enquiries</p>
+        <a href="mailto:hello@resonance360.com" class="footer__contact-email">hello@resonance360.com</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; <span id="year"></span> Resonance 360. All rights reserved.</p>
+        <p class="footer__tagline">Precision Radiology. Intelligent Innovation.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

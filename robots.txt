@@ -54,4 +54,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://resonance360.com/sitemap.xml
+Sitemap: https://www.resonance360.com/sitemap.xml
