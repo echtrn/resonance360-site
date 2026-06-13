@@ -13,7 +13,7 @@ Hosted on GitHub Pages via the `main` branch of `https://github.com/echtrn/reson
 - `about.html` — About Dr. Tham: bio → career timeline (`.journey`) → publications & speaking (`.pubs`) → R360
 - `clinical.html` — Clinical services (second opinions are fully remote — written report, no clinic visit)
 - `ai-innovation.html` — AI innovation services; Selected Work is a desktop grid with featured SSRN card, carousel ≤960px
-- `insights.html` — Writing page: on-site article summaries with anchors (#throw-punches, #guidelines-2-0, #national-ai-council, #private-practice-scale), each linking out to SSRN/LinkedIn
+- `insights.html` — Writing page: on-site article summaries with anchors (#throw-punches, #jagged-intelligence, #guidelines-2-0, #national-ai-council, #private-practice-scale), each linking out to SSRN/LinkedIn
 - `faq.html` — FAQ (FAQPage JSON-LD)
 - `contact.html` — Contact page (Formspree forms)
 - `css/styles.css` — All shared styles; page-specific styles live in each page's inline `<style>`
