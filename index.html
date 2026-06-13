@@ -129,7 +129,7 @@
       display: grid;
       grid-template-columns: 320px 1fr;
       gap: var(--sp-16);
-      align-items: center;
+      align-items: start;
       position: relative;
     }
     .meet__portrait-wrap {
@@ -144,14 +144,8 @@
       display: block;
       position: relative;
       z-index: 1;
-    }
-    .meet__portrait-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(13, 148, 136, 0.5);
-      border-radius: var(--r-lg);
-      transform: translate(14px, 14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.55);
     }
     .meet__heading {
       font-size: clamp(1.75rem, 3.2vw, 2.5rem);
